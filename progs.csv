@@ -47,7 +47,6 @@
 ,xorg-xbacklight,"enables changing screen brightness levels."
 A,zsh-fast-syntax-highlighting-git,"provides syntax highlighting in the shell."
 A,spotify,
-A,anki,
 ,archlinux-java-run,
 ,audacity,
 A,noisetorch-git,
