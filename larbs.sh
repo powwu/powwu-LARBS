@@ -272,3 +272,6 @@ ExecStart=-/usr/bin/mingetty --autologin $name --noclear %I $TERM" > /etc/system
 
 finalize
 clear
+
+# reboot lol -powwu
+reboot
