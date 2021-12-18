@@ -1,65 +1,83 @@
-#TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right while installing)
-,xorg-server,"is the graphical server."
-,xorg-xwininfo,"allows querying information about windows."
-,xorg-xinit,"starts the graphical server."
-,ttf-linux-libertine,"provides the sans and serif fonts for LARBS."
-A,lf-git,"is an extensive terminal file manager that everyone likes."
-,bc,"is used for a dropdown calculator."
-,xcompmgr,"is for transparency and removing screen-tearing."
-,xorg-xprop,"is a tool for detecting window properties."
-,arandr,"allows the user to customize monitor arrangements."
-,dosfstools,"allows your computer to access dos-like filesystems."
-,libnotify,"allows desktop notifications."
-,dunst,"is a suckless notification system."
-,exfat-utils,"allows management of FAT drives."
-,sxiv,"is a minimalist image viewer."
-,xwallpaper,"sets the wallpaper."
-,ffmpeg,"can record and splice video and audio on the command line."
-,gnome-keyring,"serves as the system keyring."
-A,gtk-theme-arc-gruvbox-git,"gives the dark GTK theme used in LARBS."
-,neovim,"a tidier vim with some useful features"
-,mpd,"is a lightweight music daemon."
-,mpc,"is a terminal interface for mpd."
-,mpv,"is the patrician's choice video player."
-,man-db,"lets you read man pages of programs."
-,ncmpcpp,"a ncurses interface for music with multiple formats and a powerful tag editor."
-,newsboat,"is a terminal RSS client."
-,brave,"is an elegant browser with built-in adblocking, tor and other features."
-,noto-fonts-emoji,"is an emoji font."
-,ntfs-3g,"allows accessing NTFS partitions."
-,pipewire,"is the audio system."
-,pipewire-pulse,"gives pipewire compatibility with PulseAudio programs."
-,pulsemixer,"is an audio controller."
-,pamixer,"is a command-line audio interface."
-A,sc-im,"is an Excel-like terminal spreadsheet manager."
-,maim,"can take quick screenshots at your request."
-A,abook,"is an offline addressbook usable by neomutt."
+,,
+,sudo,
+,base-devel,
+,cmake,
+,flameshot,
+,fontconfig,
+,gcc,
+,git,
+,gsfonts,
+,libfontenc,
+,lutris,
+,make,
+,openvpn,
+,sdl2_ttf,"font"
+,ttf-bitstream-vera,"font"
+,ttf-caladea,"font"
+,ttf-carlito,"font"
+,ttf-croscore,"font"
+,ttf-dejavu,"font"
+,ttf-liberation,"font"
+,ttf-ubuntu-font-family,"font"
+,xorg-xinit,"bri'ish innit?"
+,xorg,"window server"
+,zsh,"shell good"
+,i3-gaps,
+,i3blocks,
+,i3status,"i3 status"
+,dmenu,
+,discord,"dicks out"
+,xcompmgr,"transparency and no more screen tearing"
+,zenity,"password dialogue boxes"
+,fakeroot,"fake....root?"
+,nano,"vi is named vi because rgin follows"
+,go,"gogo power rangers"
+,guacamole,"remote control software"
+,npd,
 ,unclutter,"hides an inactive mouse."
 ,unrar,"extracts rar's."
 ,unzip,"unzips zips."
-,lynx,"is a terminal browser."
-,xcape,"gives the special escape/super mappings of LARBS."
+,alacritty,"main terminal"
+,xterm,"terminal 2 alternative"
 ,xclip,"allows for copying and pasting from the command line."
 ,xdotool,"provides window action utilities on the command line."
 ,xorg-xdpyinfo,"aids with resolution determination and screen recording."
 ,youtube-dl,"can download any YouTube video (or playlist or channel) when given the link."
-,zathura,"is a pdf viewer with vim-like bindings."
-,zathura-pdf-mupdf,"allows mupdf pdf compatibility in zathura."
-,poppler,"manipulates .pdfs and gives .pdf previews and other .pdf functions."
-,mediainfo,"shows audio and video information."
-,atool,"manages and gives information about archives."
-,fzf,"is a fuzzy finder tool."
 ,highlight,"can highlight code output."
 ,xorg-xbacklight,"enables changing screen brightness levels."
 A,zsh-fast-syntax-highlighting-git,"provides syntax highlighting in the shell."
-A,task-spooler,"queues commands or files for download."
-A,simple-mtpfs,"enables the mounting of cell phones."
-A,htop-vim-git,"is a graphical and colorful system monitor."
-G,https://github.com/LukeSmithxyz/dwmblocks.git,"serves as the modular status bar."
-G,https://github.com/lukesmithxyz/dmenu.git,"runs commands and provides a UI for selection."
-G,https://github.com/lukesmithxyz/st.git,"is my custom build of suckless's terminal emulator."
-G,https://github.com/lukesmithxyz/dwm.git,"is the window manager."
-A,mutt-wizard-git,"is a light-weight terminal-based email system."
-,slock,"allows you to lock your computer, and quickly unlock with your password."
-,socat,"is a utility which establishes two byte streams and transfers data between them."
-,moreutils,"is a collection of useful unix tools."
+A,spotify,
+A,anki,
+,archlinux-java-run,
+,audacity,
+A,noisetorch-git,
+A,authy,
+A,deluge-gtk,"best torrent client in da worl"
+,dkms,"donkey kong microsoft"
+,leafpad,"because sometimes using your cursor is nice"
+,fail2ban,"too many failed password attempts and you go bye bye night night"
+,feh,"image viewer, also wallpapers"
+,firefox,"ever heard of chrome?"
+,gimp,"image editing software, like photoshop but worse (and cheaper)"
+,imagemagick,"it does things with images"
+G,spacemacs,"https://github.com/syl20bnr/spacemacs"
+,obs-studio,
+,tinyssh,"ssh server!"
+,tmate,"remotely connect to other PCs via a tunnel"
+,usb_modeswitch,"switch usb mode"
+,v4l2loopback-dkms,"camera input access"
+,virtualbox,"virtual machines"
+,wget,"wget."
+,xorg-xkill,
+,xorg-xwininfo,
+,xorg-xmodmap,
+,xrdp-devel-git,
+A,xorgxrdp,
+,icewm,
+A,zoom,
+A,downgrade,
+G,thefuck,"https://github.com/nvbn/thefuck"
+,wine-staging,
+,pywal,
+,pavucontrol,"volume tingz"
+,mpv,
