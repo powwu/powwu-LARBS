@@ -228,7 +228,7 @@ bindsym $mod+r mode "resize"
 hide_edge_borders none
 gaps outer 5
 gaps inner 5
-#exec_always xrandr --output DVI-I-0 --mode 1368x768
+#exec_always xrandr --output <monitor 2> --auto --right-of <monitor 1>
 #exec brave
 #exec discord
 #exec xcompmgr

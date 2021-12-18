@@ -7,7 +7,7 @@ bindkey -e
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # PATH
-PATH="$GOPATH/bin/:$PATH"
+PATH="$GOPATH/bin/:$HOME/.local/bin/:$PATH"
 
 # Aliases
 alias hhkbmode='xmodmap -e "keycode 22 = grave" && xmodmap -e "keycode 49 = BackSpace"'
@@ -30,7 +30,7 @@ copy() {
 }
 
 ##
-cd /home/james
+cd $HOME
 
 ## start x
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then

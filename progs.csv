@@ -75,8 +75,11 @@ A,xorgxrdp,
 ,icewm,
 A,zoom,
 A,downgrade,
-G,thefuck,"https://github.com/nvbn/thefuck"
+A,thefuck,
 ,wine-staging,
 ,pywal,
 ,pavucontrol,"volume tingz"
 ,mpv,
+,ntp,"synchronize clock"
+,networkmanager,"nmtui is kinda cool too"
+A,mingetty,"agetty alternative which is lighter and stuff"

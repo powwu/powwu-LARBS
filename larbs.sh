@@ -260,6 +260,15 @@ pkill -15 -x 'pulseaudio'; sudo -u "$name" pulseaudio --start
 newperms "%wheel ALL=(ALL) ALL #LARBS
 %wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/paru,/usr/bin/pacman -Syyuw --noconfirm"
 
+### POWWU'S SICK MODS ###
+
+echo "[Service]
+ExecStart=
+ExecStart=-/usr/bin/mingetty --autologin $name --noclear %I $TERM" > /etc/systemd/system/getty@tty1.service.d/override.conf
+
+### END POWWU'S SICK MODS ###
+
 # Last message! Install complete!
+
 finalize
 clear
