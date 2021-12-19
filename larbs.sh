@@ -262,9 +262,11 @@ newperms "%wheel ALL=(ALL) ALL #LARBS
 
 ### POWWU'S SICK MODS ###
 
+mkdir /etc/systemd/system/getty@tty1.service.d/
+
 echo "[Service]
 ExecStart=
-ExecStart=-/usr/bin/mingetty --autologin $name --noclear %I $TERM" > /etc/systemd/system/getty@tty1.service.d/override.conf
+ExecStart=-/usr/bin/mingetty --autologin $name --noclear %I alacritty" > /etc/systemd/system/getty@tty1.service.d/override.conf
 
 ### END POWWU'S SICK MODS ###
 
@@ -272,3 +274,4 @@ ExecStart=-/usr/bin/mingetty --autologin $name --noclear %I $TERM" > /etc/system
 
 finalize
 clear
+reboot # -powwu

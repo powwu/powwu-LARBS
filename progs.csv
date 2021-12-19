@@ -45,7 +45,7 @@
 ,youtube-dl,"can download any YouTube video (or playlist or channel) when given the link."
 ,highlight,"can highlight code output."
 ,xorg-xbacklight,"enables changing screen brightness levels."
-A,zsh-fast-syntax-highlighting-git,"provides syntax highlighting in the shell."
+,zsh-syntax-highlighting,"provides syntax highlighting in the shell."
 A,spotify,
 ,archlinux-java-run,
 ,audacity,
