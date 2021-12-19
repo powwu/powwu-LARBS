@@ -10,7 +10,7 @@
 #| |___) |
 #|_|____/ 
 
-exec wallpaper ~/Wallpapers/owouwu.png
+exec wallpaper ~/Wallpapers/Swale.png
 
 set $mod Mod4
 
@@ -170,15 +170,14 @@ bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources for some reason.
-set $fg #cbe3e7
-set $bg #1b182c
-set $urgent #ff0000
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
-#client.focused_inactive none     $fg     $fg  $fg       $fg
-#client.unfocused        $fg     $fg     $fg  $fg       $fg
-client.urgent           $urgent     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
 client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 client.background       $bg
