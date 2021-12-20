@@ -271,7 +271,7 @@ rm -rf /home/$name/{larbs.sh,testing,go,progs.csv}
 mkdir /home/$name/{Downloads,Documents,Games}
 pip install pywalfox
 pywalfox install
-
+chown -R $name /home/$name/
 
 ### END POWWU'S SICK MODS ###
 

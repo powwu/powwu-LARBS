@@ -15,7 +15,7 @@ if [ -d "$1" ] # if directory
             wal -a 0.5 -i $1/$file
         done
     else # if file 
-        wal -a 0.5 -i $1
+        wal -i $1
 	feh --bg-scale $1
     fi
 fi
@@ -38,4 +38,4 @@ pywalfox update
 
 #ratbagctl "Logitech G403 Prodigy Wired/Wireless Gaming Mouse" led 1 set color $color
 
-
+python ~/.local/bin/alacritty_xr_color_scheme ~/.config/alacritty/alacritty.yml
