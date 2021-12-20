@@ -10,7 +10,7 @@
 #| |___) |
 #|_|____/ 
 
-exec wallpaper ~/Wallpapers/min-geo/geo/
+exec wallpaper ~/Wallpapers/min-geo/geometric/
 #exec python ~/.local/bin/alacritty_xr_color_scheme ~/.config/alacritty/alacritty.yml
 
 set $mod Mod4
