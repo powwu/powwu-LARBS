@@ -263,13 +263,15 @@ newperms "%wheel ALL=(ALL) ALL #LARBS
 
 ### POWWU'S SICK MODS ###
 
-mkdir /etc/systemd/system/getty@tty1.service.d/override.conf
+mkdir /etc/systemd/system/getty@tty1.service.d/
 echo "[Service]
 ExecStart=
 ExecStart=-/usr/bin/mingetty --autologin $name --noclear %I $TERM" > /etc/systemd/system/getty@tty1.service.d/override.conf
 rm -rf /home/$name/{larbs.sh,testing,go,progs.csv}
+mkdir /home/$name/{Downloads,Documents,Games}
 pip install pywalfox
 pywalfox install
+
 
 ### END POWWU'S SICK MODS ###
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# taken from https://github.com/FilipLitwora/dotfiles/blob/master/.local/bin/wallpaper -powwu
+
 #find random wallpaper or if specified and set it as wallpaper using pywal
 
 if [ -z "$1" ] 
@@ -22,7 +24,8 @@ cp $HOME/.cache/wal/colors.Xresources $HOME/.Xresources
 #https://github.com/FilipLitwora/pywal-discord
 #pywal-discord 
 
-spicetify update
+
+#spicetify update
 
 #reload bspwm border colors
 #source ~/.cache/wal/colors.sh

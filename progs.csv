@@ -83,3 +83,4 @@ A,thefuck,
 ,ntp,"synchronize clock"
 ,networkmanager,"nmtui is kinda cool too"
 A,mingetty,"agetty alternative which is lighter and stuff"
+,pywal-git,automatically set pretty colors!

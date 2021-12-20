@@ -2,7 +2,7 @@
 
 ### cool important info ###
 # the majority of this config is stolen from some other persons rice, but i dont remember whose it was. if it was you, i am very sorry
-
+###			###
 
 # _ _____ 
 #(_)___ / 
@@ -10,7 +10,8 @@
 #| |___) |
 #|_|____/ 
 
-exec wallpaper ~/Wallpapers/Swale.png
+exec wallpaper ~/Wallpapers/min-geo/geo/
+exec python ~/.local/bin/alacritty_xr_color_scheme ~/.config/alacritty/alacritty.yml
 
 set $mod Mod4
 
@@ -233,6 +234,7 @@ bindsym $mod+r mode "resize"
 hide_edge_borders none
 gaps outer 5
 gaps inner 5
+## uncomment below for monitor stuffs
 #exec_always xrandr --output <monitor 2> --auto --right-of <monitor 1>
 #exec brave
 #exec discord
@@ -248,4 +250,4 @@ for_window [class="Discord"] move to workspace $ws2
 for_window [class="pulseeffects"] move to workspace $ws10
 for_window [class="^.*"] border pixel 5
 #exec picom
-exec x11vnc
+#exec x11vnc
