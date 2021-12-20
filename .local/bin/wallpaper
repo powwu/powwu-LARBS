@@ -12,7 +12,7 @@ else
 if [ -d "$1" ] # if directory
     then
          ls $1 |sort -R |tail -1 |while read file; do
-            wal -a -i $1/$file
+            wal -i $1/$file
         done
     else # if file 
         wal -i $1
