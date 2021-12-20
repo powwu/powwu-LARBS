@@ -81,6 +81,7 @@ A,thefuck,
 ,pavucontrol,"volume tingz"
 ,mpv,
 ,ntp,"synchronize clock"
-,networkmanager,"nmtui is kinda cool too"
-A,mingetty,"agetty alternative which is lighter and stuff"
-A,pywal-git,automatically set pretty colors!
+,networkmanager,"because nmtui is kinda cool too"
+A,mingetty,"is an agetty alternative which is lighter and stuff"
+A,pywal-git,"automatically sets pretty colors!"
+,python-pip,"is a python package manager thing idk what pip stands for"
