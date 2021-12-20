@@ -152,9 +152,11 @@ systembeepoff() { dialog --infobox "Getting rid of that retarded error beep soun
 	rmmod pcspkr
 	echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf ;}
 
-finalize(){ \
+finalize(){
 	dialog --infobox "Preparing welcome message..." 4 50
 	dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the script completed successfully and all the programs and configuration files should be in place.\\n\\nTo run the new graphical environment, log out and log back in as your new user, then run the command \"startx\" to start the graphical environment (it will start automatically in tty1).\\n\\n.t Luke" 12 80
+	# -powwu
+	reboot	
 	}
 
 ### THE ACTUAL SCRIPT ###
@@ -272,6 +274,7 @@ mkdir /home/$name/{Downloads,Documents,Games}
 pip install pywalfox
 pywalfox install
 chown -R $name /home/$name/
+cd /home/$name/ && git clone http://github.com/powwu/wallpapers.git && mv wallpapers Wallpapers
 
 ### END POWWU'S SICK MODS ###
 
@@ -280,5 +283,3 @@ chown -R $name /home/$name/
 finalize
 clear
 
-# reboot lol -powwu
-reboot
