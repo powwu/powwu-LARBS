@@ -10,7 +10,7 @@
 #| |___) |
 #|_|____/ 
 
-exec wallpaper ~/Wallpapers/min-geo/geometric/
+exec wallpaper ~/Wallpapers/cherrypicked/
 #exec python ~/.local/bin/alacritty_xr_color_scheme ~/.config/alacritty/alacritty.yml
 
 set $mod Mod4
@@ -18,7 +18,7 @@ set $mod Mod4
 font pango:monospace 8
 
 #choose randomly new wallpaper/colorscheme
-bindsym $mod+Shift+w exec wallpaper ~/Wallpapers/min-geo/geometric/
+bindsym $mod+Shift+w exec wallpaper ~/Wallpapers/cherrypicked/
 
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
