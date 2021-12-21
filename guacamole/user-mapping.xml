@@ -1,0 +1,30 @@
+<user-mapping>
+    <!-- Another user, but using md5 to hash the password
+         (example below uses the md5 hash of "PASSWORD") -->
+    <authorize
+            username="changeme"
+            password="changeme"
+            encoding="md5">
+
+        <!-- First authorized connection -->
+        <connection name="RDP">
+            <protocol>rdp</protocol>
+            <param name="hostname">localhost</param>
+	    <param name="security">rdp</param>
+        </connection>
+
+        <!-- Second authorized connection -->
+        <connection name="SSH">
+            <protocol>ssh</protocol>
+            <param name="hostname">localhost</param>
+            <param name="port">22</param>
+        </connection>
+
+	<connection name="VNC">
+	     <protocol>vnc</protocol>
+	     <param name="hostname">localhost</param>
+	     <param name="port">5900</param>
+	</connection>
+
+    </authorize>
+</user-mapping>

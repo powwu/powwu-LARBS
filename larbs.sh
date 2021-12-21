@@ -274,6 +274,8 @@ pip install pywalfox
 pywalfox install
 chown -R $name /home/$name/
 cd /home/$name/ && git clone http://github.com/powwu/wallpapers.git && mv wallpapers Wallpapers
+mv /home/$name/guacamole /etc/
+mv /home/$name/guac.war /var/lib/tomcat8/webapps/
 
 echo "[Unit]
 Description=Change wallpaper daily

@@ -32,7 +32,7 @@
 ,fakeroot,"fake....root?"
 ,nano,"vi is named vi because rgin follows"
 ,go,"gogo power rangers"
-,guacamole,"remote control software"
+A,guacamole,"remote control software"
 ,npd,
 ,unclutter,"hides an inactive mouse."
 ,unrar,"extracts rar's."
@@ -76,7 +76,7 @@ A,xorgxrdp,
 A,zoom,
 A,downgrade,
 A,thefuck,
-,wine-staging,
+A,wine-staging,
 ,pywal,
 ,pavucontrol,"volume tingz"
 ,mpv,
@@ -86,3 +86,5 @@ A,mingetty,"is an agetty alternative which is lighter and stuff"
 A,pywal-git,"automatically sets pretty colors!"
 ,python-pip,"is a python package manager thing idk what pip stands for"
 ,python2,"is like python 3 but 2"
+,neofetch,
+,pulseaudio,
