@@ -238,7 +238,7 @@ gaps inner 5
 #exec_always xrandr --output <monitor 2> --auto --right-of <monitor 1>
 #exec brave
 #exec discord
-#exec xcompmgr
+exec xcompmgr
 #exec st
 #exec firefox
 #exec spotify
