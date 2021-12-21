@@ -148,7 +148,7 @@ putgitrepo() { # Downloads a gitrepo $1 and places the files in $2 only overwrit
 	sudo -u "$name" cp -rfT "$dir" "$2"
 	}
 
-systembeepoff() { dialog --infobox "Getting rid of that retarded error beep sound..." 10 50
+systembeepoff() { dialog --infobox "Getting rid of the error beep sound..." 10 50
 	rmmod pcspkr
 	echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf ;}
 
@@ -275,6 +275,26 @@ pip install pywalfox
 pywalfox install
 chown -R $name /home/$name/
 cd /home/$name/ && git clone http://github.com/powwu/wallpapers.git && mv wallpapers Wallpapers
+
+echo "[Unit]
+Description=Change wallpaper daily
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target" > /etc/systemd/system/wallpaper.timer
+
+echo "[Unit]
+Description=Change wallpaper
+
+[Service]
+Type=simple
+ExecStart=/home/$name/.local/bin/wallpaper /home/$name/Wallpapers/cherrypicked/
+
+[Install]
+WantedBy=multi-user.target" > /etc/systemd/system/wallpaper.service
 
 ### END POWWU'S SICK MODS ###
 
