@@ -248,6 +248,7 @@ exec noisetorch -i
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Discord"] move to workspace $ws2
 for_window [class="pulseeffects"] move to workspace $ws10
+assign [title="wallpaper"] $ws10
 for_window [class="^.*"] border pixel 5
 #exec picom
 #exec x11vnc
