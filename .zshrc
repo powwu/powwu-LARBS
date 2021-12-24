@@ -20,13 +20,18 @@ alias vc-clear="rm -rf ~/.config/discord-temp/*"
 alias please='sudo $(fc -ln -1)'
 alias brightness='xrandr --output DVI-D-0 --brightness'
 alias rotate='xrandr --output DVI-D-0 --rotate'
-alias refresh='sudo pkill -KILL -u james'
+alias refresh='pkill i3'
 alias upload='curl bashupload.com -T'
 alias vial=Vial
 alias mic="pkill pulseaudio-equalizer && noisetorch -u && noisetorch -i" 
 eval $(thefuck --alias)
+
 copy() {
 	echo "$1" | xclip -selection c
+}
+
+git-fast() {
+	git add . && echo "$1" | xargs git commit -m && git push
 }
 
 ##
