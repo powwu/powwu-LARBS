@@ -23,7 +23,7 @@ bindsym $mod+Shift+w exec wallpaper ~/Wallpapers/cherrypicked/
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy-rapid 10 10 -u
 
 # Start notification daemon
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
@@ -106,26 +106,16 @@ bindsym $mod+Shift+i exec  shutdown now
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-#set $ws1 ""
-#set $ws2 ""
-#set $ws3 ""
-#set $ws4 ""
-#set $ws5 "5"
-#set $ws6 "6"
-#set $ws7 "7"
-#set $ws8 "8"
-#set $ws9 "9"
-#set $ws10 ""
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
+set $ws1 ""
+set $ws2 """
+set $ws3 ""
+set $ws4 ""
+set $ws5 ""
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 ""
 
 
 # switch to workspace
@@ -238,7 +228,7 @@ gaps inner 5
 #exec_always xrandr --output <monitor 2> --auto --right-of <monitor 1>
 #exec brave
 #exec discord
-exec xcompmgr
+exec xcompmgr -CcfF -I-.05 -O-.05 -D2
 #exec st
 #exec firefox
 #exec spotify

@@ -294,12 +294,14 @@ echo "[Unit]
 Description=Change wallpaper
 
 [Service]
-Environment="DISPLAY=:0"
-Environment="XAUTHORITY=/home/$name/.Xauthority"
-ExecStart=alacritty -t "wallpaper" -e /home/$name/.local/bin/wallpaper /home/$name/Wallpapers/cherrypicked/
+Environment=\"DISPLAY=:0\"
+Environment=\"XAUTHORITY=/home/$name/.Xauthority\"
+ExecStart=alacritty -t \"wallpaper\" -e /home/$name/.local/bin/wallpaper /home/$name/Wallpapers/cherrypicked/
 
 [Install]
 WantedBy=graphical.target" > /etc/systemd/system/wallpaper.service
+
+systemctl enable wallpaper.timer
 
 ### END POWWU'S SICK MODS ###
 

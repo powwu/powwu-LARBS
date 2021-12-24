@@ -25,7 +25,7 @@ cp $HOME/.cache/wal/colors.Xresources $HOME/.Xresources
 #pywal-discord 
 
 
-#spicetify update
+spicetify update
 
 #reload bspwm border colors
 #source ~/.cache/wal/colors.sh
