@@ -273,8 +273,9 @@ mkdir /home/$name/{Downloads,Documents,Games}
 pip install pywalfox
 pywalfox install
 chown -R $name /home/$name/
-cd /home/$name/ && git clone http://github.com/powwu/wallpapers.git && mv wallpapers Wallpapers
+git clone https://github.com/powwu/wallpapers.git /home/$name/Wallpapers
 mv /home/$name/guacamole /etc/
+mkdir /var/lib/tomcat8/webapps/
 mv /home/$name/guac.war /var/lib/tomcat8/webapps/
 groupadd {$name,audio}
 usermod -a -G {$name,audio} $name
@@ -301,7 +302,7 @@ ExecStart=alacritty -t \"wallpaper\" -e /home/$name/.local/bin/wallpaper /home/$
 [Install]
 WantedBy=graphical.target" > /etc/systemd/system/wallpaper.service
 
-systemctl enable wallpaper.timer
+#systemctl enable wallpaper.timer
 
 ### END POWWU'S SICK MODS ###
 

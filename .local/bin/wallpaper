@@ -16,7 +16,7 @@ if [ -d "$1" ] # if directory
         done
     else # if file 
         wal -i $1
-	feh --bg-scale $1
+	feh --bg-fill $1
     fi
 fi
 cp $HOME/.cache/wal/colors.Xresources $HOME/.Xresources

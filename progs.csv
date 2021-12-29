@@ -59,7 +59,6 @@ A,deluge-gtk,"best torrent client in da worl"
 ,firefox,"ever heard of chrome?"
 ,gimp,"image editing software, like photoshop but worse (and cheaper)"
 ,imagemagick,"it does things with images"
-G,spacemacs,"https://github.com/syl20bnr/spacemacs"
 ,obs-studio,
 ,tinyssh,"ssh server!"
 ,tmate,"remotely connect to other PCs via a tunnel"
@@ -97,3 +96,5 @@ A,ttf-twemoji,
 ,nm-applet,
 A,i3lock-color,
 ,xss-lock,
+,nemo,"shut up i like it ok"
+,emacs,
