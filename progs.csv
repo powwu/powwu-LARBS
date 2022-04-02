@@ -94,9 +94,22 @@ A,pywal-git,"automatically sets pretty colors!"
 A,ttf-twemoji-color,
 A,ttf-twemoji,
 ,nm-applet,
-A,i3lock-color,
+A,i3lock,
 ,xss-lock,
 ,nemo,"shut up i like it ok"
 ,emacs,
 ,gutenprint,
 ,cups,
+<<<<<<< HEAD
+,mesa,
+,lib32-mesa,
+,xf86-video-intel,
+,vulkan-intel,
+,intel-media-driver,
+,libva-intel-driver,
+,upower,
+,tlp,
+,fprintd,
+A,pam-fprint-grosshack,
+=======
+>>>>>>> refs/remotes/origin/master
