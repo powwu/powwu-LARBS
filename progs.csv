@@ -1,6 +1,8 @@
 ,,
 ,sudo,
 ,base-devel,
+,openssl,
+,openssl-1.1,
 ,cmake,
 ,flameshot,
 ,fontconfig,
@@ -22,17 +24,17 @@
 ,xorg-xinit,"bri'ish innit?"
 ,xorg,"window server"
 ,zsh,"shell good"
-,i3-gaps,
+A,i3-gaps-rounded,
 ,i3blocks,
 ,i3status,"i3 status"
-,dmenu,
+,rofi,
 ,discord,"dicks out"
 ,xcompmgr,"transparency and no more screen tearing"
 ,zenity,"password dialogue boxes"
 ,fakeroot,"fake....root?"
 ,nano,"vi is named vi because rgin follows"
 ,go,"gogo power rangers"
-A,guacamole,"remote control software"
+A,guacamole-server,"remote control software"
 ,npd,
 ,unclutter,"hides an inactive mouse."
 ,unrar,"extracts rar's."
@@ -46,11 +48,13 @@ A,guacamole,"remote control software"
 ,highlight,"can highlight code output."
 ,xorg-xbacklight,"enables changing screen brightness levels."
 ,zsh-syntax-highlighting,"provides syntax highlighting in the shell."
-A,spotify,
+A,spotify,"it's spotify"
+A,spicetify-cli,"spotify themer"
+A,spot-client,"foss spotify client"
 ,archlinux-java-run,
 ,audacity,
 A,noisetorch-git,
-A,authy,
+A,authy,"2fa cross-platform thing because I don't want my Bitwarden to be both passwords AND 2fa"
 A,deluge-gtk,"best torrent client in da worl"
 ,dkms,"donkey kong microsoft"
 ,leafpad,"because sometimes using your cursor is nice"
@@ -91,16 +95,14 @@ A,pywal-git,"automatically sets pretty colors!"
 ,awk,
 ,xfce4-notifyd,
 ,ttf-font-awesome,
-A,ttf-twemoji-color,
-A,ttf-twemoji,
+A,ttf-twemoji,"emoji support"
 ,nm-applet,
 A,i3lock,
 ,xss-lock,
-,nemo,"shut up i like it ok"
+,gvim,
 ,emacs,
 ,gutenprint,
 ,cups,
-<<<<<<< HEAD
 ,mesa,
 ,lib32-mesa,
 ,xf86-video-intel,
@@ -111,5 +113,14 @@ A,i3lock,
 ,tlp,
 ,fprintd,
 A,pam-fprint-grosshack,
-=======
->>>>>>> refs/remotes/origin/master
+,reflector,
+,picom,
+A,arcolinux-logout,
+,xdg-utils,
+,lxappearance,
+A,anki-bin,". it takes forever to download but that's part of the fun"
+,dblatex,"LaTeX support"
+A,ame,"is a pacman wrapper and AUR helper that works sometimes"
+,libratbag,"allows for configuration of me rgb mouse B)"
+,qdirstat,"file cleanup wee woo"
+,pv,

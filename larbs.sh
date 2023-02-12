@@ -3,6 +3,7 @@
 # Luke's Auto Rice Boostrapping Script (LARBS)
 # by Luke Smith <luke@lukesmith.xyz>
 # License: GNU GPLv3
+# Modified by Powwu <james@powwu.xyz>
 
 ### OPTIONS AND VARIABLES ###
 
@@ -154,6 +155,7 @@ systembeepoff() { dialog --infobox "Getting rid of the error beep sound..." 10 5
 
 finalize(){
 	dialog --infobox "Preparing welcome message..." 4 50
+	dialog --title "All done!" --msgbox "nice, its gonna reboot now, make sure you register your fingerprint, and check if theres anything wrong. -powwu" 12 80
 	# -powwu
 	reboot	
 	}
@@ -264,45 +266,80 @@ newperms "%wheel ALL=(ALL) ALL #LARBS
 
 ### POWWU'S SICK MODS ###
 
+# enable autologin
 mkdir /etc/systemd/system/getty@tty1.service.d/
 echo "[Service]
 ExecStart=
 ExecStart=-/usr/bin/mingetty --autologin $name --noclear %I $TERM" > /etc/systemd/system/getty@tty1.service.d/override.conf
-rm -rf /home/$name/{larbs.sh,testing,go,progs.csv}
+
+# make needed groups
+groupadd {$name,audio,input,vboxusers,video}
+usermod -a -G {$name,audio,input,vboxusers,video} $name
+
+# make sure that I own the home folder completely
+chown -R $name:$name /home/$name/
+
+# register my commonly used folders
 mkdir /home/$name/{Downloads,Documents,Games}
+
+# wallpaper/pywal config
 pip install pywalfox
 pywalfox install
-chown -R $name /home/$name/
 git clone https://github.com/powwu/wallpapers.git /home/$name/Wallpapers
+
+# nap install (avoiding AUR)
+go install github.com/maaslalani/nap@main
+
+# configure guacamole
 mv /home/$name/guacamole /etc/
 mkdir /var/lib/tomcat8/webapps/
 mv /home/$name/guac.war /var/lib/tomcat8/webapps/
-groupadd {$name,audio}
-usermod -a -G {$name,audio} $name
+# requires user to enable systemd service for tomcat and guac manually, so someone doesn't use this script and accidentally expose their stuff to the internet
+#systemctl enable {tomcat,guacd}
 
+# automatic mirror refreshing
+systemctl enable reflector
 
-echo "[Unit]
-Description=Change wallpaper daily
+# configure power button behavior
+xconf-query -c xfce4-power-manager -p /xfce4-power-manager/power-button-action -s 3
 
-[Timer]
-OnCalendar=daily
-Persistent=true
+# configure fingerprint reader
+files=("system-login" "system-local-login" "sudo")
+for f in files
+do
+    sed -i '1 a\auth      sufficient pam_fprintd_grosshack.so' /etc/pam.d/$file
+    sed -i '1 a\auth		sufficient  	pam_unix.so try_first_pass nullok' /etc/pam.d/$file
+done
 
-[Install]
-WantedBy=timers.target" > /etc/systemd/system/wallpaper.timer
+# configure mirrorlist
+reflector > /etc/pacman.d/mirrorlist
 
-echo "[Unit]
-Description=Change wallpaper
+# configure default apps
+xdg-mime default thunderbird.desktop x-scheme-handler/mailto
 
-[Service]
-Environment=\"DISPLAY=:0\"
-Environment=\"XAUTHORITY=/home/$name/.Xauthority\"
-ExecStart=alacritty -t \"wallpaper\" -e /home/$name/.local/bin/wallpaper /home/$name/Wallpapers/cherrypicked/
+xdg-mime default thunderbird.desktop x-scheme-handler/mid
 
-[Install]
-WantedBy=graphical.target" > /etc/systemd/system/wallpaper.service
+xdg-mime default feh.desktop image/png
 
-#systemctl enable wallpaper.timer
+xdg-mime default feh.desktop image/jpeg
+
+xdg-mime default nemo.desktop inode/directory
+
+xdg-mime default thunderbird.desktop message/rfc822
+
+xdg-mime default firefox.desktop x-scheme-handler/http
+
+xdg-mime default firefox.desktop x-scheme-handler/https
+
+# give accts write permissions to spotify files
+sudo chmod a+wr /opt/spotify
+sudo chmod a+wr /opt/spotify/Apps -R
+
+# make sure that all files in $PATH (that useracc has access to) are executable
+sudo -u $name zsh -c 'echo $PATH | tr ":" "\n" | xargs chmod +x -R'
+
+# cleanup
+rm -rf /home/$name/{larbs.sh,testing,go,progs.csv}
 
 ### END POWWU'S SICK MODS ###
 
