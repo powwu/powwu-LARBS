@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+discord & /home/james/.local/share/Telegram & element-desktop

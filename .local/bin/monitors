@@ -1,0 +1,25 @@
+#!/bin/bash
+
+SCREEN_LEFT=DP3
+SCREEN_MIDDLE=eDP1
+SCREEN_RIGHT=DP2
+SLEEP_TIME=4
+
+while [ 1 ]; do
+    STATUS_SAVED=$(cat ~/.status-right)
+    STATUS=$(cat /sys/class/drm/card0-DP-2/status)
+    if [ "$STATUS" != "$STATUS_SAVED" ]; then
+	if [ "$STATUS" == "connected" ]; then
+		xrandr --output $SCREEN_LEFT --auto --rotate normal --output $SCREEN_MIDDLE --auto --rotate normal --right-of $SCREEN_LEFT --output $SCREEN_RIGHT --rotate normal --right-of $SCREEN_MIDDLE
+	    cat ~/.current-wallpaper | xargs wallpaper
+            echo "$STATUS" > ~/.status-right
+	    todoist
+	    i3-msg move workspace to output left
+	else
+	    xrandr --output $SCREEN_LEFT --off --output $SCREEN_RIGHT --off
+	    cat ~/.current-wallpaper | xargs wallpaper
+            echo "$STATUS" > ~/.status-right
+	fi
+    fi
+    sleep $SLEEP_TIME
+done

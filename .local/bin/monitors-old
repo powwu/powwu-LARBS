@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# SCREEN_LEFT=DP2
+SCREEN_LEFT=eDP1 # SCREEN_MIDDLE
+SCREEN_RIGHT=DP1
+SLEEP_TIME=4
+DPI_SINGLE=160
+DPI_MULTI=100
+
+while [ 1 ]; do
+    STATUS_SAVED=$(cat ~/.status)
+    STATUS=$(cat /sys/class/drm/card0-DP-1/status)
+    if [ "$STATUS" != "$STATUS_SAVED" ]; then
+	if [ "$STATUS" == "connected" ]; then
+	    xrandr --output $SCREEN_LEFT --auto --rotate normal --pos 0x0 --output $SCREEN_RIGHT --auto --rotate normal --right-of $SCREEN_LEFT
+	    echo "$DPI_MULTI" > ~/.dpi
+	    cat ~/.current-wallpaper | xargs wallpaper
+            echo "$STATUS" > ~/.status
+	else
+	    xrandr --output $SCREEN_RIGHT --off
+	    echo "$DPI_SINGLE" > ~/.dpi
+	    cat ~/.current-wallpaper | xargs wallpaper
+            echo "$STATUS" > ~/.status
+	fi
+    fi
+    sleep $SLEEP_TIME
+done

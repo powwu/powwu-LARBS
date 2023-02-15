@@ -1,0 +1,15 @@
+#!/bin/bash
+
+PID=$$ # needed because if you reference $$ in the if then it does the fprintd-verify process lole
+
+kill $(pidof -x -o $$ lock) # needed or else locks will claim up the fingerprint reader -- does not kill i3lock -- prevents "device was already claimed"
+
+i3lock-fancy-rapid 10 10 -u &
+(while pidof -x lock; do
+  if (fprintd-verify james | grep verify-match); then 
+  	pkill i3lock && kill $(pidof -x lock)
+  elif (fprintd-verify james | grep opened); then
+      sudo pkill fprintd
+      sudo /usr/lib/fprintd # second check to unclog fingerprint reader -- prevents "device was already opened" -- need to grant access in sudoers file
+  fi
+done) &

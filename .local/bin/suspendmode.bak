@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sleep 10
+echo "deep" | tee /sys/power/mem_sleep
+systemctl suspend
