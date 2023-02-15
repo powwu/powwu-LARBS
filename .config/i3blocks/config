@@ -4,11 +4,21 @@ separator=false
 separator_block_width=15
 
 
+[ip-global]
+command=curl -4s icanhazip.com | xargs echo "🌐"
+interval=10
 
+[seperator]
+
+[ip-local]
+command=ip -json route get 8.8.8.8 | jq -r '.[].prefsrc' | xargs echo "🔒"
+interval=10
+
+[seperator]
 
 [weather]
 command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo "🌈"
-interval=300
+interval=10
 
 [seperator]
 
@@ -23,11 +33,11 @@ interval=1
 [battery]
 command=~/.local/bin/battery
 markup=pango
-instance=BAT0
-interval=30
+instance=BAT1
+interval=1
 #_PERCENT=&#x25;
 #_HIDE_IF_CHARGED=false
-#_USE_BATT_GRADIENT=false
+_USE_BATT_GRADIENT=false
 #_SYMBOLS_ONLY=false
 #_HIDE_PERCENTAGE=false
 #_HIDE_TIME_REMAINING=true

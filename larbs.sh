@@ -262,9 +262,11 @@ pkill -15 -x 'pulseaudio'; sudo -u "$name" pulseaudio --start
 # This line, overwriting the `newperms` command above will allow the user to run
 # serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
 newperms "%wheel ALL=(ALL) ALL #LARBS
-%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/paru,/usr/bin/pacman -Syyuw --noconfirm"
+%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/paru,/usr/bin/pacman -Syyuw --noconfirm,/usr/lib,fprintd,/usr/bin/pkill fprintd, /usr/bin/NetworkManager"
 
 ### POWWU'S SICK MODS ###
+
+
 
 # enable autologin
 mkdir /etc/systemd/system/getty@tty1.service.d/
@@ -338,8 +340,12 @@ sudo chmod a+wr /opt/spotify/Apps -R
 # make sure that all files in $PATH (that useracc has access to) are executable
 sudo -u $name zsh -c 'echo $PATH | tr ":" "\n" | xargs chmod +x -R'
 
+# make sure power button commands can go through
+sed -i 's/#HandlePowerKey=poweroff/HandlePowerKey=ignore/' /etc/systemd/logind.conf
+sed -i 's/#PowerKeyIgnoreInhibited=no/PowerKeyIgnoreInhibited=yes/' /etc/systemd/logind.conf
+
 # cleanup
-rm -rf /home/$name/{larbs.sh,testing,go,progs.csv}
+rm -rf /home/$name/{larbs.sh,testing,go,progs.csv,.git/}
 
 ### END POWWU'S SICK MODS ###
 

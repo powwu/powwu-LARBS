@@ -1,23 +1,27 @@
-background_opacity: 0.9
-opacity: 0.9
-
 colors:
-  # Normal colors
-  normal:
-      black: '#333f4a'
-      red: '#d95468'
-      green: '#8bd49c'
-      yellow: '#ebbf83'
-      blue: '#539afc'
-      magenta: '#b62d65'
-      cyan: '#70e1e8'
-
-  # Bright colors
   bright:
-      black: '#333f4a'
-      red: '#d95468'
-      green: '#8bd49c'
-      yellow: '#ebbf83'
-      blue: '#539afc'
-      magenta: '#b62d65'
-      cyan: '#70e1e8'
+    black: '#978fa4'
+    blue: '#A09CD0'
+    cyan: '#B4B2EC'
+    green: '#817EA9'
+    magenta: '#B5B2EC'
+    red: '#727198'
+    white: '#d8cdeb'
+    yellow: '#8A88B6'
+  normal:
+    black: '#0c0d15'
+    blue: '#A09CD0'
+    cyan: '#B4B2EC'
+    green: '#817EA9'
+    magenta: '#B5B2EC'
+    red: '#727198'
+    white: '#d8cdeb'
+    yellow: '#8A88B6'
+  primary:
+    background: '#0c0d15'
+    foreground: '#d8cdeb'
+window:
+  opacity: 0.7
+  padding:
+    x: 12
+    y: 12

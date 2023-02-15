@@ -24,7 +24,7 @@
 ,xorg-xinit,"bri'ish innit?"
 ,xorg,"window server"
 ,zsh,"shell good"
-A,i3-gaps-rounded,
+A,i3-gaps-rounded-git,
 ,i3blocks,
 ,i3status,"i3 status"
 ,rofi,
@@ -124,3 +124,15 @@ A,ame,"is a pacman wrapper and AUR helper that works sometimes"
 ,libratbag,"allows for configuration of me rgb mouse B)"
 ,qdirstat,"file cleanup wee woo"
 ,pv,
+A,moar,"is an alternative to less that is better"
+,adwaita-cursors,
+,rosegarden,
+,qsynth,
+,fluidsynth,
+A,linthesia-git,
+,mitmproxy,
+,pipewire-jack,
+,lib32-pipewire-jack,
+,rar,
+A,gum,
+,xfce4-power-manager,
