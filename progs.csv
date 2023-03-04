@@ -4,6 +4,13 @@
 ,openssl,
 ,openssl-1.1,
 ,cmake,
+,wpa_supplicant,
+,connman,"actually works unlike networkmanager+iwd"
+A,connman-gtk,"cool interface for when i'm lazy"
+A,cmst,"provides a tray applet and another gui solution for when i'm lazy"
+,wireguard,
+,wireguard,
+,wireguard-tools,
 ,flameshot,
 ,fontconfig,
 ,gcc,
@@ -50,7 +57,6 @@ A,guacamole-server,"remote control software"
 ,zsh-syntax-highlighting,"provides syntax highlighting in the shell."
 A,spotify,"it's spotify"
 A,spicetify-cli,"spotify themer"
-A,spot-client,"foss spotify client"
 ,archlinux-java-run,
 ,audacity,
 A,noisetorch-git,
@@ -84,7 +90,6 @@ A,wine-staging,
 ,pavucontrol,"volume tingz"
 ,mpv,
 ,ntp,"synchronize clock"
-,networkmanager,"because nmtui is kinda cool too"
 A,mingetty,"is an agetty alternative which is lighter and stuff"
 A,pywal-git,"automatically sets pretty colors!"
 ,python-pip,"is a python package manager thing idk what pip stands for"
@@ -101,6 +106,7 @@ A,i3lock,
 ,xss-lock,
 ,gvim,
 ,emacs,
+,nomacs,"image viewer"
 ,gutenprint,
 ,cups,
 ,mesa,

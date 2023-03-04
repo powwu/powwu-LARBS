@@ -59,8 +59,8 @@ git-fast() {
 }
 
 ls() {
-	pwd; echo "$1" | xargs ls -lhAG --time-style=+'' --color=always | sed -re 's/^[drlwx-]{10}\s+[^ ]*\s//' | sed -re '/^.*~undo-tree~.*$/d' 
-	undotrees=$(/bin/ls -a | grep "~undo-tree~" | wc -l);
+	echo "$(pwd)/$1"; echo "$1" | xargs ls -lhAG --time-style=+'' --color=always | sed -re 's/^[drlwx-]{10}\s+[^ ]*\s//' | sed -re '/^.*~undo-tree~.*$/d' 
+	undotrees=$(/bin/ls -a $1 | grep "~undo-tree~" | wc -l);
 	echo "$undotrees undo trees present" 
 }
 

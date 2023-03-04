@@ -98,14 +98,14 @@ manualinstall() { # Installs $1 manually. Used only for AUR helper here.
 }
 
 maininstall() { # Installs all needed programs from main repo.
-	dialog --title "LARBS Installation" --infobox "Installing \`$1\` ($n of $total). $1 $2" 5 70
+	dialog --title "LARBS Installation" --infobox "Installing \`$1\` ($n of $total). Purpose: $2" 5 70
 	installpkg "$1"
 	}
 
 gitmakeinstall() {
 	progname="$(basename "$1" .git)"
 	dir="$repodir/$progname"
-	dialog --title "LARBS Installation" --infobox "Installing \`$progname\` ($n of $total) via \`git\` and \`make\`. $(basename "$1") $2" 5 70
+	dialog --title "LARBS Installation" --infobox "Installing \`$progname\` ($n of $total) via \`git\` and \`make\`. $(basename "$1") Purpose: $2" 5 70
 	sudo -u "$name" git clone --depth 1 "$1" "$dir" >/dev/null 2>&1 || { cd "$dir" || return 1 ; sudo -u "$name" git pull --force origin master;}
 	cd "$dir" || exit 1
 	make >/dev/null 2>&1
@@ -113,7 +113,7 @@ gitmakeinstall() {
 	cd /tmp || return 1 ;}
 
 aurinstall() { \
-	dialog --title "LARBS Installation" --infobox "Installing \`$1\` ($n of $total) from the AUR. $1 $2" 5 70
+	dialog --title "LARBS Installation" --infobox "Installing \`$1\` ($n of $total) from the AUR. Purpose: $2" 5 70
 	echo "$aurinstalled" | grep -q "^$1$" && return 1
 	sudo -u "$name" $aurhelper -S --noconfirm "$1" >/dev/null 2>&1
 	}
@@ -302,6 +302,9 @@ mv /home/$name/guac.war /var/lib/tomcat8/webapps/
 # automatic mirror refreshing
 systemctl enable reflector
 
+# network tingz
+systemctl enable wpa_suppliant connman
+
 # configure power button behavior
 xconf-query -c xfce4-power-manager -p /xfce4-power-manager/power-button-action -s 3
 
@@ -321,9 +324,9 @@ xdg-mime default thunderbird.desktop x-scheme-handler/mailto
 
 xdg-mime default thunderbird.desktop x-scheme-handler/mid
 
-xdg-mime default feh.desktop image/png
+xdg-mime default nomacs.desktop image/png
 
-xdg-mime default feh.desktop image/jpeg
+xdg-mime default nomacs.desktop image/jpeg
 
 xdg-mime default nemo.desktop inode/directory
 
@@ -332,6 +335,8 @@ xdg-mime default thunderbird.desktop message/rfc822
 xdg-mime default firefox.desktop x-scheme-handler/http
 
 xdg-mime default firefox.desktop x-scheme-handler/https
+
+xdg-mime default emacs.desktop text/plain
 
 # give accts write permissions to spotify files
 sudo chmod a+wr /opt/spotify
