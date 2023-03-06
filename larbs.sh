@@ -266,8 +266,6 @@ newperms "%wheel ALL=(ALL) ALL #LARBS
 
 ### POWWU'S SICK MODS ###
 
-
-
 # enable autologin
 mkdir /etc/systemd/system/getty@tty1.service.d/
 echo "[Service]
@@ -282,22 +280,12 @@ usermod -a -G {$name,audio,input,vboxusers,video} $name
 chown -R $name:$name /home/$name/
 
 # register my commonly used folders
-mkdir /home/$name/{Downloads,Documents,Games}
+mkdir /home/$name/{Downloads,Documents,Games,Projects,Music}
 
 # wallpaper/pywal config
 pip install pywalfox
 pywalfox install
 git clone https://github.com/powwu/wallpapers.git /home/$name/Wallpapers
-
-# nap install (avoiding AUR)
-go install github.com/maaslalani/nap@main
-
-# configure guacamole
-mv /home/$name/guacamole /etc/
-mkdir /var/lib/tomcat8/webapps/
-mv /home/$name/guac.war /var/lib/tomcat8/webapps/
-# requires user to enable systemd service for tomcat and guac manually, so someone doesn't use this script and accidentally expose their stuff to the internet
-#systemctl enable {tomcat,guacd}
 
 # automatic mirror refreshing
 systemctl enable reflector
@@ -339,8 +327,8 @@ xdg-mime default firefox.desktop x-scheme-handler/https
 xdg-mime default emacs.desktop text/plain
 
 # give accts write permissions to spotify files
-sudo chmod a+wr /opt/spotify
-sudo chmod a+wr /opt/spotify/Apps -R
+chmod a+wr /opt/spotify
+chmod a+wr /opt/spotify/Apps -R
 
 # make sure that all files in $PATH (that useracc has access to) are executable
 sudo -u $name zsh -c 'echo $PATH | tr ":" "\n" | xargs chmod +x -R'
@@ -350,7 +338,7 @@ sed -i 's/#HandlePowerKey=poweroff/HandlePowerKey=ignore/' /etc/systemd/logind.c
 sed -i 's/#PowerKeyIgnoreInhibited=no/PowerKeyIgnoreInhibited=yes/' /etc/systemd/logind.conf
 
 # cleanup
-rm -rf /home/$name/{larbs.sh,testing,go,progs.csv,.git/}
+rm -rf /home/$name/{larbs.sh,testing,go,progs.csv,.git/, LICENSE}
 
 ### END POWWU'S SICK MODS ###
 
