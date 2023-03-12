@@ -156,8 +156,6 @@ systembeepoff() { dialog --infobox "Getting rid of the error beep sound..." 10 5
 finalize(){
 	dialog --infobox "Preparing welcome message..." 4 50
 	dialog --title "All done!" --msgbox "nice, its gonna reboot now, make sure you register your fingerprint, and check if theres anything wrong. -powwu" 12 80
-	# -powwu
-	reboot	
 	}
 
 ### THE ACTUAL SCRIPT ###
@@ -286,12 +284,13 @@ mkdir /home/$name/{Downloads,Documents,Games,Projects,Music}
 pip install pywalfox
 pywalfox install
 git clone https://github.com/powwu/wallpapers.git /home/$name/Wallpapers
+cd /home/$name/Wallpapers && 7z x wallpapers.7z.001 -pFTQmDd3rd6PxcKgF328C3N6XnzUW63PFiFd
 
 # automatic mirror refreshing
 systemctl enable reflector
 
 # network tingz
-systemctl enable wpa_suppliant connman
+systemctl enable wpa_supplicant connman
 
 # configure power button behavior
 xconf-query -c xfce4-power-manager -p /xfce4-power-manager/power-button-action -s 3
@@ -331,14 +330,14 @@ chmod a+wr /opt/spotify
 chmod a+wr /opt/spotify/Apps -R
 
 # make sure that all files in $PATH (that useracc has access to) are executable
-sudo -u $name zsh -c 'echo $PATH | tr ":" "\n" | xargs chmod +x -R'
+sudo -u $name zsh -c 'echo $PATH | tr ":" "\n" | sudo xargs chmod +x -R'
 
 # make sure power button commands can go through
-sed -i 's/#HandlePowerKey=poweroff/HandlePowerKey=ignore/' /etc/systemd/logind.conf
-sed -i 's/#PowerKeyIgnoreInhibited=no/PowerKeyIgnoreInhibited=yes/' /etc/systemd/logind.conf
+sudo sed -i 's/#HandlePowerKey=poweroff/HandlePowerKey=ignore/' /etc/systemd/logind.conf
+sudo sed -i 's/#PowerKeyIgnoreInhibited=no/PowerKeyIgnoreInhibited=yes/' /etc/systemd/logind.conf
 
 # cleanup
-rm -rf /home/$name/{larbs.sh,testing,go,progs.csv,.git/, LICENSE}
+rm -rf /home/$name/{larbs.sh,testing,go,progs.csv,LICENSE}
 
 ### END POWWU'S SICK MODS ###
 
@@ -346,4 +345,5 @@ rm -rf /home/$name/{larbs.sh,testing,go,progs.csv,.git/, LICENSE}
 
 finalize
 clear
+reboot
 
