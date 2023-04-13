@@ -48,7 +48,8 @@ alias cp="cp -r"
 alias vim=nvim
 alias snp='zsh -c "cd $HOME/.snippets && find . -type f -not -name \".*\" | gum filter | xargs cat; exit"'
 alias snippet='zsh -c "cd $HOME/.snippets && find . -type f -not -name \".*\" | gum filter | xargs cat; exit"'
-alias less="moar"
+alias less=moar
+#alias sudo=doas
 
 copy() {
 	echo "$1" | xclip -selection c
@@ -121,5 +122,7 @@ cd $HOME
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
     exec startx
 fi
+
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 #clear

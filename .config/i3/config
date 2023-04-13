@@ -250,6 +250,7 @@ exec noisetorch -i
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="pulseeffects"] move to workspace $ws10
 for_window [title="emacs@"] move to workspace $ws4
+for_window [title="Agent List"] kill
 for_window [class="Lutris"] move to workspace $ws6
 for_window [class="todoist"] move to workspace $ws1
 for_window [workspace=$ws3] layout tabbed
@@ -261,3 +262,6 @@ exec picom --shadow-exclude 'bounding_shaped && !rounded_corners'
 #exec monitors
 # exec sleep 5 && todoist
 #exec xlayoutdisplay -r 60 -dpi 160
+exec birdtray
+exec udiskie
+exec sudo systemctl start reflector # sudoers file allows this with no password

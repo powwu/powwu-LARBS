@@ -10,6 +10,7 @@ i3lock-fancy-rapid 10 10 -u &
   	pkill i3lock && kill $(pidof -x lock)
   elif (fprintd-verify james | grep opened); then
       sudo pkill fprintd
+      pgrep fprintd | xargs sudo kill
       sudo /usr/lib/fprintd # second check to unclog fingerprint reader -- prevents "device was already opened" -- need to grant access in sudoers file
   fi
 done) &

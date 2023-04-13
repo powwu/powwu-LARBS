@@ -1,6 +1,9 @@
 *
 .*
-.emacs.d/
+.*/*
+.config/spicetify/*
+.emacs.d/*
+.emacs.d
 *private*
 !.config/flameshot/*
 !.config/i3/*
