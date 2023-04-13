@@ -1,9 +1,6 @@
 *
 .*
 .*/*
-.config/spicetify/*
-.emacs.d/*
-.emacs.d
 *private*
 !.config/flameshot/*
 !.config/i3/*
@@ -16,5 +13,7 @@
 !.spacemacs
 !.local/bin/*
 !.gitignore/*
+!progs.csv
+!README.md
 *private*
 *undo-tree*
