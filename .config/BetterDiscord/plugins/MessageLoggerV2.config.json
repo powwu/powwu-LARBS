@@ -1,0 +1,82 @@
+{
+    "settings": {
+        "obfuscateCSSClasses": true,
+        "autoBackup": false,
+        "dontSaveData": false,
+        "displayUpdateNotes": true,
+        "ignoreMutedGuilds": false,
+        "ignoreMutedChannels": false,
+        "ignoreBots": true,
+        "ignoreSelf": false,
+        "ignoreBlockedUsers": false,
+        "ignoreNSFW": false,
+        "ignoreLocalEdits": false,
+        "ignoreLocalDeletes": false,
+        "alwaysLogGhostPings": true,
+        "showOpenLogsButton": true,
+        "messageCacheCap": 1000,
+        "savedMessagesCap": 1000,
+        "reverseOrder": false,
+        "onlyLogWhitelist": true,
+        "whitelist": [
+            "190327149696253952",
+            "913126499794710578",
+            "895355787864576041",
+            "310038690099494922",
+            "792544046018068493"
+        ],
+        "blacklist": [
+            "317737076160331786",
+            "278960636153692160"
+        ],
+        "notificationBlacklist": [
+            "312287977151660042"
+        ],
+        "toastToggles": {
+            "sent": false,
+            "edited": false,
+            "deleted": true,
+            "ghostPings": true
+        },
+        "toastTogglesDMs": {
+            "sent": false,
+            "edited": false,
+            "deleted": true,
+            "ghostPings": true,
+            "disableToastsForLocal": false
+        },
+        "useNotificationsInstead": true,
+        "blockSpamEdit": false,
+        "disableKeybind": false,
+        "cacheAllImages": true,
+        "dontDeleteCachedImages": false,
+        "aggresiveMessageCaching": true,
+        "renderCap": 50,
+        "maxShownEdits": 0,
+        "hideNewerEditsFirst": true,
+        "displayDates": true,
+        "deletedMessageColor": "",
+        "editedMessageColor": "",
+        "useAlternativeDeletedStyle": false,
+        "showEditedMessages": true,
+        "showDeletedMessages": true,
+        "showPurgedMessages": true,
+        "showDeletedCount": true,
+        "showEditedCount": true,
+        "alwaysLogSelected": true,
+        "alwaysLogDM": true,
+        "restoreDeletedMessages": true,
+        "contextmenuSubmenuName": "Message Logger",
+        "streamSafety": {
+            "showEdits": false,
+            "showDeletes": false,
+            "showButton": false,
+            "showNotifications": false,
+            "showContextMenu": false
+        },
+        "imageCacheDir": "/home/james/.config/BetterDiscord/plugins/MLV2_IMAGE_CACHE",
+        "flags": 2,
+        "autoUpdate": true,
+        "versionInfo": "1.8.21"
+    }
+}

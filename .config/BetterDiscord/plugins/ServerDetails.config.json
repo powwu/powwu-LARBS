@@ -1,0 +1,28 @@
+{
+	"all": {
+		"amounts": {
+			"tooltipDelay": 0,
+			"tooltipWidth": 240
+		},
+		"colors": {
+			"tooltipColor": ""
+		},
+		"dates": {
+			"tooltipDates": {}
+		},
+		"general": {
+			"onlyShowOnShift": false
+		},
+		"items": {
+			"boosts": false,
+			"channels": true,
+			"creationDate": true,
+			"icon": false,
+			"joinDate": true,
+			"language": false,
+			"members": true,
+			"owner": true,
+			"roles": true
+		}
+	}
+}

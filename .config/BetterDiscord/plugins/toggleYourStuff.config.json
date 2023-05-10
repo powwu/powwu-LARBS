@@ -1,0 +1,283 @@
+{
+    "settings": {
+        "plugins": {
+            "AutoScroll": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "BDContextMenu": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "BDFDB": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "BetterAudioPlayer": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "BetterBotTags": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "BetterGuildTooltip": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "BetterNsfwTag": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "BetterPictureInPicture": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "BetterRoleColors": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "BiggerStreamPreview": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "CallTimeCounter": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "CharCounter": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "DashToSpaceInChannelName": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "DisableStickerSuggestions": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "DoNotTrack": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "Double Click To Edit": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "GameActivityToggle": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "ImageUtilities": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "KeepCurrentChannel": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "KeywordTracker": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "NotificationSounds": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "OnlineFriendCount": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "PlatformIndicators": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "PluginRepo": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "PronounDB": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "QuickMention": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "ReadAllNotificationsButton": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "removeTrackingURL": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "ServerCounter": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "ServerDetails": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "SpotifyControls": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "SubtleDevicePrompt": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "TeX": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "Timezones": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "Translator": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "TypingIndicator": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "TypingUsersPopouts": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            },
+            "ZeresPluginLibrary": {
+                "hotkey": "KeyD",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 68
+            }
+        },
+        "themes": {
+            "Pywal-Discord-default": {
+                "hotkey": "KeyE",
+                "ctrl": true,
+                "shift": true,
+                "alt": false,
+                "keycode": 69
+            }
+        },
+        "cancelDefault": false,
+        "_note": "The plugin uses the keycodes for detecting a match. The hotkeys are for display in settings only."
+    }
+}
