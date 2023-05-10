@@ -1,32 +1,27 @@
 #!/bin/sh
 
-[[ -z "${1}" ]] && $(curl -L powwu.xyz/rice > rice; chmod +x ./rice; ./rice go; exit)
-
 ### ----- SETTINGS ----- ###
 
-echo "Do you wish to install a new bootloader, Limine? This will create a new default EFI entry."
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) INSTALL_LIMINE=""; break;;
-        No ) break;;
-    esac
-done
+read -p "Do you wish to install a new bootloader, Limine? This will create a new default EFI entry." yn
+case $yn in
+    [yY] ) INSTALL_LIMINE="!"; break;;
+    [nN] ) break;;
+    * ) echo "invalid response";;
+esac
 
-echo "Do you wish to use the Chaotic AUR in conjunction with the regular AUR? This will provide faster install times, but adds another layer of vulnerability."
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) CHAOTIC_AUR=""; break;;
-        No ) break;;
-    esac
-done
+read -p "Do you wish to use the Chaotic AUR in conjunction with the regular AUR? This will provide faster install times, but adds another layer of vulnerability." yn
+case $yn in
+    [yY] ) CHAOTIC_AUR="!"; break;;
+    [nN] ) break;;
+    * ) echo "invalid response";;
+esac
 
-echo "Do you wish to automatically login on system startup?"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) AUTOLOGIN=""; break;;
-        No ) break;;
-    esac
-done
+read -p "Do you wish to automatically login on system startup?" yn
+case $yn in
+    [yY] ) AUTOLOGIN=""; break;;
+    [nN] ) break;;
+    * ) echo "invalid response";;
+esac
 
 ### ----- END SETTINGS ----- ###
 
