@@ -1,7 +1,5 @@
 #!/bin/sh
 
-echo "$0"
-
 [[ "$0" == "curl" ]] && $(curl -L powwu.xyz/rice > ricescriptsupercoolname; sleep 10; chmod +x ./ricescriptsupercoolname; ./ricescriptsupercoolname; exit)
 
 ### ----- SETTINGS ----- ###
