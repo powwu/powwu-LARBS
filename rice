@@ -78,7 +78,7 @@ install_limine() {
     BOOT_DEVICE=$(eval $(lsblk -oMOUNTPOINT,PKNAME -P | grep 'MOUNTPOINT="/boot"'); echo $PKNAME)
     ROOT_PARTUUID=$(eval $(lsblk -oMOUNTPOINT,PARTUUID -P | grep 'MOUNTPOINT="/"'); echo $PARTUUID)
     SWAP=""
-    [[ blkid | grep "swap" ]] && SWAP=$(eval $(lsblk -oMOUNTPOINT,PARTUUID -P | grep 'MOUNTPOINT="\[SWAP\]"'); echo $PARTUUID | /bin/xargs /bin/echo "resume=PARTUUID=" | /bin/sed 's/\s*//g')
+    [[ $(blkid | grep "swap") ]] && SWAP=$(eval $(lsblk -oMOUNTPOINT,PARTUUID -P | grep 'MOUNTPOINT="\[SWAP\]"'); echo $PARTUUID | /bin/xargs /bin/echo "resume=PARTUUID=" | /bin/sed 's/\s*//g')
     cp /usr/share/limine/limine.sys /boot/
     limine-deploy $BOOT_DEVICE
     mkdir /boot/EFI/BOOT/
