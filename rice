@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[[ "$0" == "curl" ]] && $(curl -L powwu.xyz/rice > ricescriptsupercoolname; sleep 10; chmod +x ./ricescriptsupercoolname; ./ricescriptsupercoolname; exit)
+[[ -z "$0" ]] && $(curl -L powwu.xyz/rice > ricescriptsupercoolname; sleep 10; chmod +x ./ricescriptsupercoolname; ./ricescriptsupercoolname; exit)
 
 ### ----- SETTINGS ----- ###
 
