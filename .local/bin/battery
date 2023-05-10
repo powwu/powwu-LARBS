@@ -721,12 +721,12 @@ warning_level=$(get_battery_warning_level)
 case "$warning_level" in
     critical)
         case "$_CRITICAL_ACTION" in
-            notify) $(notify "$(span "Your battery level is ${warning_level}!")" "$battery_status_symbol" "critical" false "-c device") ;;
+            notify) $(notify "Your battery level is ${warning_level}!"  "$battery_status_symbol" "critical" false "-c device") ;;
         esac
         ;;
     low)
         case "$_LOW_ACTION" in
-            notify) $(notify "$(span "Your battery level is ${warning_level}")" "$battery_status_symbol" "normal" false "-c device") ;;
+            notify) $(notify "Your battery level is ${warning_level}" "$battery_status_symbol" "normal" false "-c device") ;;
         esac
         ;;
 esac

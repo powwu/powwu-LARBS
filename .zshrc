@@ -35,7 +35,6 @@ alias ew="emacs -nw"
 alias nano="echo 'no' && null"
 alias telegram="$HOME/.local/share/Telegram"
 alias discord="electron16 /usr/lib/discord/app.asar --no-sandbox"
-alias update="sudo pacman -Syyu --noconfirm"
 alias white="feh --bg-fill ~/Wallpapers/white.png"
 alias es="setxkbmap es"
 alias us="setxkbmap us"
@@ -49,6 +48,7 @@ alias vim=nvim
 alias snp='zsh -c "cd $HOME/.snippets && find . -type f -not -name \".*\" | gum filter | xargs cat; exit"'
 alias snippet='zsh -c "cd $HOME/.snippets && find . -type f -not -name \".*\" | gum filter | xargs cat; exit"'
 alias less=moar
+alias update='sudo pacman -Sy --noconfirm && sudo powerpill -Su --noconfirm && yay -Su --noconfirm'
 #alias sudo=doas
 
 copy() {
@@ -60,7 +60,7 @@ git-fast() {
 }
 
 ls() {
-	echo "$(pwd)/$1"; echo "$1" | xargs ls -lhAG --time-style=+'' --color=always | sed -re 's/^[drlwx-]{10}\s+[^ ]*\s//' | sed -re '/^.*~undo-tree~.*$/d' 
+	echo "$(pwd)/$1"; echo "$1" | xargs ls -lhAG --time-style=+'' --color=always | sed -re 's/^[drlwxt-]{10}\s+[^ ]*\s//' | sed -re '/^.*~undo-tree~.*$/d' 
 	undotrees=$(/bin/ls -a $1 | grep "~undo-tree~" | wc -l);
 	echo "$undotrees undo trees present" 
 }
@@ -126,3 +126,4 @@ fi
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 #clear
+export PATH=$PATH:/home/james/.spicetify

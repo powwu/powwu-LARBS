@@ -1,7 +1,7 @@
 
 
 ### cool important info ###
-# the majority of this config is stolen from some other persons rice, but i dont remember whose it was. if it was you, i am very sorry
+# the majority of this config is stolen from some other persons rice, but i dont remember whose it was. if it was you, thank you very much <3
 ###			###
 
 # _ _____ 
@@ -14,6 +14,7 @@ set $wallpaperdir ~/Wallpapers/wallpapers/favorites/
 
 exec wallpaper $wallpaperdir; lock
 set $mod Mod4
+set $alt Mod1
 
 font pango:monospace 9
 
@@ -53,6 +54,9 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+
+# toggle birdtray
+bindsym $mod+$alt+Return exec birdtray -t
 
 # kill focused window
 bindsym $mod+x kill
@@ -176,8 +180,8 @@ client.background       $bg
 # funny program chooser
 bindsym $mod+space exec rofi -show drun -opacity "85" -font "Source Code Pro 14" -theme ~/.cache/wal/colors-rofi-dark.rasi
 
-# Start notification daemon
-exec /usr/lib/xfce4/notifyd/xfce4-notifyd
+# Start notification daemon with delay (so it obeys dpi)
+exec sleep 5; /usr/lib/xfce4/notifyd/xfce4-notifyd
 
 bindsym $mod+bar exec firefox
 bindsym $mod+Shift+bar exec discord
@@ -245,7 +249,7 @@ gaps inner 5
 # exec firefox
 # exec spotify
 exec flameshot
-exec noisetorch -i
+#exec noisetorch -i
 #exec pulseeffects
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="pulseeffects"] move to workspace $ws10
@@ -263,5 +267,5 @@ exec picom --shadow-exclude 'bounding_shaped && !rounded_corners'
 # exec sleep 5 && todoist
 #exec xlayoutdisplay -r 60 -dpi 160
 exec birdtray
-exec udiskie
-exec sudo systemctl start reflector # sudoers file allows this with no password
+exec udiskie -t
+exec sleep 20 && sudo systemctl start reflector # sudoers file allows this with no password

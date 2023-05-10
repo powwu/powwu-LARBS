@@ -1,9 +1,34 @@
 #!/bin/sh
 
+### ----- SETTINGS ----- ###
+
+## Change the values accordingly.
+DPI=100;
+BOOT_DEVICE=/dev/nvme0n1 # device, NOT partition (do not use /dev/nvme0n1p1)
+
+## BOOLEANS: Comment out settings that you don't want applied.
+# Install new bootloader Limine. Will create a new default EFI entry. May only work automated if you have a /boot partition.
+export INSTALL_LIMINE
+
+# Use swap with LIMINE params (requires that swap be mounted already, double check!)
+export SWAPON
+
+# Use chaotic-aur (does not affect using normal aur)
+export CHAOTIC_AUR
+
+# Automatic login
+export AUTOLOGIN
+
+# Mark settings as reviewed; uncomment me to continue
+#export SETTINGS_COMPLETED
+
+
+### ----- END SETTINGS ----- ###
+
+
 # error function
 error() { printf "\n\n%s\n" "$1" >&2; exit 1; }
 
-pacman --noconfirm --needed -Sy git || error "Are you sure you're running this as the root user, are on an Arch-based distribution and have an internet connection?"
 
 manualinstall() { # Installs $1 manually. Used only for AUR helper here.
 	  sudo -u "$name" mkdir -p "$repodir/$1"
@@ -13,42 +38,63 @@ manualinstall() { # Installs $1 manually. Used only for AUR helper here.
 	  sudo -u "$name" -D "$repodir/$1" makepkg --noconfirm -si >/dev/null 2>&1 || return 1
 }
 
-gitmakeinstall() {
-	  progname="$(basename "$1" .git)"
-	  dir="$repodir/$progname"
-	  sudo -u "$name" git clone --depth 1 "$1" "$dir" >/dev/null 2>&1 || { cd "$dir" || return 1 ; sudo -u "$name" git pull --force origin master;}
-	  cd "$dir" || exit 1
-	  make >/dev/null 2>&1
-	  make install >/dev/null 2>&1
-	  cd /tmp || return 1;
+maininstall() {
+	  pacman -S --noconfirm --needed "$1" || sudo -u "$name" yay -S --noconfirm --needed "$1"
 }
 
-aurinstall() { \
-	             echo "$aurinstalled" | grep -q "^$1$" && return 1
-	             sudo -u "$name" $aurhelper -S --noconfirm "$1" >/dev/null 2>&1
+installationloop() {
+	  ([ -f "$progsfile" ] && cp "$progsfile" /tmp/progs.csv) || curl -Ls "$progsfile" | sed '/^#/d' > /tmp/progs.csv
+	  total=$(wc -l < /tmp/progs.csv)
+	  aurinstalled=$(pacman -Qqm)
+	  while IFS=, read -r tag program comment; do
+		    n=$((n+1))
+		    echo "$comment" | grep -q "^\".*\"$" && comment="$(echo "$comment" | sed "s/\(^\"\|\"$\)//g")"
+		    case "$tag" in
+			      "G") gitmakeinstall "$program" "$comment" ;;
+			      "P") pipinstall "$program" "$comment" ;;
+			      *) maininstall "$program" "$comment" ;;
+		    esac
+	  done < /tmp/progs.csv ;
 }
 
-pipinstall() { \
-	             [ -x "$(command -v "pip")" ] || installpkg python-pip >/dev/null 2>&1
-	             yes | pip install "$1"
+chaoticaur() {
+	  pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
+    pacman-key --lsign-key FBA220DFC880C036
+    pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+    echo "\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf
 }
 
+autologin() {
+    mkdir /etc/systemd/system/getty@tty1.service.d/
+    echo "[Service]
+ExecStart=
+ExecStart=-/usr/bin/mingetty --autologin $name --noclear %I $TERM" > /etc/systemd/system/getty@tty1.service.d/override.conf
+}
 
-installationloop() { \
-	                   ([ -f "$progsfile" ] && cp "$progsfile" /tmp/progs.csv) || curl -Ls "$progsfile" | sed '/^#/d' > /tmp/progs.csv
-	                   total=$(wc -l < /tmp/progs.csv)
-	                   aurinstalled=$(pacman -Qqm)
-	                   while IFS=, read -r tag program comment; do
-		                     n=$((n+1))
-		                     echo "$comment" | grep -q "^\".*\"$" && comment="$(echo "$comment" | sed "s/\(^\"\|\"$\)//g")"
-		                     case "$tag" in
-			                       "A") aurinstall "$program" "$comment" ;;
-			                       "G") gitmakeinstall "$program" "$comment" ;;
-			                       "P") pipinstall "$program" "$comment" ;;
-			                       *) maininstall "$program" "$comment" ;;
-		                     esac
-	                   done < /tmp/progs.csv ;}
+install_limine() {
+   BOOT_DEVICE=$(eval $(lsblk -oMOUNTPOINT,PKNAME -P | grep 'MOUNTPOINT="/"'); echo $PKNAME)
+   ROOT_PARTUUID=$(eval $(lsblk -oMOUNTPOINT,PARTUUID -P | grep 'MOUNTPOINT="/"'); echo $PARTUUID)
+   SWAP=""
+   [[ -v SWAPON ]] && SWAP=$(eval $(lsblk -oMOUNTPOINT,PARTUUID -P | /bin/grep 'MOUNTPOINT="\[SWAP\]"'); echo $PARTUUID | /bin/xargs /bin/echo "resume=PARTUUID=" | /bin/sed 's/\s*//g')
+   cp /usr/share/limine/limine.sys /boot/
+   limine-deploy $BOOT_DEVICE
+   mkdir /boot/EFI/BOOT/
+   cp /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/
+   echo "TIMEOUT=0
 
+:Arch Linux
+    PROTOCOL=linux
+    KERNEL_PATH=boot:///vmlinuz-linux
+    CMDLINE=root=PARTUUID=$ROOT_PARTUUID $SWAP rw ibt=off
+    MODULE_PATH=boot:///initramfs-linux.img" > /boot/limine.cfg
+}
+
+# check if settings are read
+[[ -v SETTINGS_COMPLETED ]] || error "\$SETTINGS_COMPLETED not set; modify this script to configure your settings and try again\n";
+
+# check for root & update system
+printf "Updating package repositories, please wait...\n\n"
+pacman --noconfirm --needed -Syy git > /dev/null || error "Are you sure you're running this as the root user, are on an Arch-based distribution and have an internet connection?"
 
 # get username and password for the new user
 read -p 'New Username: ' name
@@ -59,8 +105,8 @@ read -sp 'Retype password: ' pass2
 
 
 # final chance to cancel
-printf "\n\n\033[0;31mThis is your final chance to exit before making changes to your system. To exit, press CTRL-C (C-c) now. Automatically continuing in 10 seconds..."
-sleep 10
+printf "\n\n\033[0;31mThis is your final chance to exit before making changes to your system. To exit, press CTRL-C (C-c) now. Automatically continuing in 20 seconds..."
+sleep 20
 
 # start timer
 start=$SECONDS
@@ -72,7 +118,7 @@ case "$(readlink -f /sbin/init)" in
 			  ;;
 		*)
 			  pacman --noconfirm --needed -S artix-keyring artix-archlinux-support >/dev/null 2>&1
-			  for repo in extra community; do
+			  for repo in extra community multilib; do
 				    grep -q "^\[$repo\]" /etc/pacman.conf ||
 					      echo "[$repo]
 Include = /etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf
@@ -92,20 +138,24 @@ usermod -a -G wheel "$name" && chown "$name":wheel /home/"$name"
 export repodir="/home/$name/"; mkdir -p "$repodir"; chown -R "$name":wheel "$(dirname "$repodir")"
 export progsfile="$repodir/progs.csv"
 
-# install aur helper
+# Make pacman colorful, concurrent downloads (no powerpill needed) and Pacman eye-candy.
+grep -q "ILoveCandy" /etc/pacman.conf || sed -i "/#VerbosePkgLists/a ILoveCandy" /etc/pacman.conf
+sed -i "s/^#ParallelDownloads = 8$/ParallelDownloads = 5/;s/^#Color$/Color/" /etc/pacman.conf
+
+# add chaotic aur
+[[ -v CHAOTIC_AUR ]] && chaoticaur
+
+# Use all cores for compilation.
+sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
+
+# install yay
 manualinstall yay
 
+# install packages
 installationloop
 
 # beep no more
 systembeepoff
-
-# Make pacman colorful, concurrent downloads and Pacman eye-candy.
-grep -q "ILoveCandy" /etc/pacman.conf || sed -i "/#VerbosePkgLists/a ILoveCandy" /etc/pacman.conf
-sed -i "s/^#ParallelDownloads = 8$/ParallelDownloads = 5/;s/^#Color$/Color/" /etc/pacman.conf
-
-# Use all cores for compilation.
-sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
 
 # zsh as default shell
 chsh -s /bin/zsh "$name" >/dev/null 2>&1
@@ -132,17 +182,14 @@ grep -q "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" /etc/conf.d/fluidsynth
 pkill -15 -x 'pulseaudio'; sudo -u "$name" pulseaudio --start
 
 # enable autologin
-mkdir /etc/systemd/system/getty@tty1.service.d/
-echo "[Service]
-ExecStart=
-ExecStart=-/usr/bin/mingetty --autologin $name --noclear %I $TERM" > /etc/systemd/system/getty@tty1.service.d/override.conf
+[[ -v AUTOLOGIN ]] && autologin
 
 # make needed groups
 groups=("$name" "audio" "input" "vboxusers" "video")
 for g in "${groups[@]}"
 do
-groupadd $g
-sudo usermod -a -G $g $name
+    groupadd $g
+    sudo usermod -a -G $g $name
 done
 
 # register commonly used folders
@@ -151,8 +198,10 @@ mkdir /home/$name/{Downloads,Documents,Games,Projects,Music,Screenshots}
 # make sure that the home folder is owned completely
 sudo chown -R $name:$name /home/$name/
 
+# install spacemacs
+git clone https://github.com/syl20bnr/spacemacs /home/$name/.emacs.d
+
 # wallpaper/pywal config
-pip install pywalfox
 pywalfox install
 git clone https://github.com/powwu/wallpapers.git /home/$name/Wallpapers
 cd /home/$name/Wallpapers && 7z x wallpapers.7z.001 -pFTQmDd3rd6PxcKgF328C3N6XnzUW63PFiFd
@@ -195,11 +244,14 @@ sudo chmod a+wr /opt/spotify/Apps -R
 
 # make sure that all files in $PATH (that useracc has access to) are executable
 PATH=$(sudo -u $name zsh -c 'echo $PATH') # single quotes to not evaluate $PATH right away
-echo $PATH | tr ":" "\n" | while read -r line; do sudo chmod -x -R $line; done 
+echo $PATH | tr ":" "\n" | while read -r line; do sudo chmod -x -R $line; done
 
 # make sure power button keycodes can go through
 sudo sed -i 's/#HandlePowerKey=poweroff/HandlePowerKey=ignore/' /etc/systemd/logind.conf
 sudo sed -i 's/#PowerKeyIgnoreInhibited=no/PowerKeyIgnoreInhibited=yes/' /etc/systemd/logind.conf
+
+# install limine
+[[ -v INSTALL_LIMINE ]] && install_limine
 
 # read timer
 duration=$(( SECONDS - start ))

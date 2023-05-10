@@ -1,4 +1,3 @@
-,,
 ,curl,
 ,ca-certificates,
 ,base-devel,
@@ -12,8 +11,8 @@
 ,cmake,
 ,wpa_supplicant,
 ,connman,"actually works unlike networkmanager+iwd"
-A,connman-gtk,"cool interface for when i'm lazy"
-A,cmst,"provides a tray applet and another gui solution for when i'm lazy"
+,connman-gtk,"cool interface for when i'm lazy"
+,cmst,"provides a tray applet and another gui solution for when i'm lazy"
 ,wireguard,
 ,wireguard,
 ,wireguard-tools,
@@ -37,7 +36,7 @@ A,cmst,"provides a tray applet and another gui solution for when i'm lazy"
 ,xorg-xinit,"bri'ish innit?"
 ,xorg,"window server"
 ,zsh,"shell good"
-A,i3-gaps-rounded-git,
+,i3-gaps-rounded-git,
 ,i3blocks,
 ,i3status,"i3 status"
 ,rofi,
@@ -47,7 +46,7 @@ A,i3-gaps-rounded-git,
 ,fakeroot,"fake....root?"
 ,nano,"vi is named vi because rgin follows"
 ,go,"gogo power rangers"
-A,guacamole-server,"remote control software"
+,guacamole-server,"remote control software"
 ,npd,
 ,unclutter,"hides an inactive mouse."
 ,unrar,"extracts rar's."
@@ -61,13 +60,13 @@ A,guacamole-server,"remote control software"
 ,highlight,"can highlight code output."
 ,xorg-xbacklight,"enables changing screen brightness levels."
 ,zsh-syntax-highlighting,"provides syntax highlighting in the shell."
-A,spotify,"it's spotify"
-A,spicetify-cli,"spotify themer"
+,spotify,"it's spotify"
+,spicetify-cli,"spotify themer"
 ,archlinux-java-run,
 ,audacity,
-A,noisetorch-git,
-A,authy,"2fa cross-platform thing because I don't want my Bitwarden to be both passwords AND 2fa"
-A,deluge-gtk,"best torrent client in da worl"
+,noisetorch-git,
+,authy,"2fa cross-platform thing because I don't want my Bitwarden to be both passwords AND 2fa"
+,deluge-gtk,"best torrent client in da worl"
 ,dkms,"donkey kong microsoft"
 ,leafpad,"because sometimes using your cursor is nice"
 ,fail2ban,"too many failed password attempts and you go bye bye night night"
@@ -86,18 +85,18 @@ A,deluge-gtk,"best torrent client in da worl"
 ,xorg-xwininfo,
 ,xorg-xmodmap,
 ,xrdp-devel-git,
-A,xorgxrdp,
+,xorgxrdp,
 ,icewm,
-A,zoom,
-A,downgrade,
-A,thefuck,
-A,wine-staging,
+,zoom,
+,downgrade,
+,thefuck,
+,wine-staging,
 ,pywal,
 ,pavucontrol,"volume tingz"
 ,mpv,
 ,ntp,"synchronize clock"
-A,mingetty,"is an agetty alternative which is lighter and stuff"
-A,pywal-git,"automatically sets pretty colors!"
+,mingetty,"is an agetty alternative which is lighter and stuff"
+,pywal-git,"automatically sets pretty colors!"
 ,python-pip,"is a python package manager thing idk what pip stands for"
 ,python2,"is like python 3 but 2"
 ,neofetch,
@@ -106,9 +105,9 @@ A,pywal-git,"automatically sets pretty colors!"
 ,awk,
 ,xfce4-notifyd,
 ,ttf-font-awesome,
-A,ttf-twemoji,"emoji support"
+,ttf-twemoji,"emoji support"
 ,nm-applet,
-A,i3lock,
+,i3lock,
 ,xss-lock,
 ,gvim,
 ,emacs,
@@ -124,27 +123,33 @@ A,i3lock,
 ,upower,
 ,tlp,
 ,fprintd,
-A,pam-fprint-grosshack,
+,pam-fprint-grosshack,
 ,reflector,
 ,picom,
-A,arcolinux-logout,
+,arcolinux-logout,
 ,xdg-utils,
 ,lxappearance,
-A,anki-bin,". it takes forever to download but that's part of the fun"
+,anki-bin,". it takes forever to download but that's part of the fun"
 ,dblatex,"LaTeX support"
 ,libratbag,"allows for configuration of me rgb mouse B)"
 ,qdirstat,"file cleanup wee woo"
 ,pv,
-A,moar,"is an alternative to less that is better"
+,moar,"is an alternative to less that is better"
 ,adwaita-cursors,
 ,rosegarden,
 ,qsynth,
 ,fluidsynth,
-A,linthesia-git,
+,linthesia-git,
 ,mitmproxy,
 ,pipewire-jack,
 ,lib32-pipewire-jack,
 ,rar,
-A,gum,
+,gum,
 ,xfce4-power-manager,
 ,p7zip,
+,vagrant,
+,zsh-vi-mode,
+,linux-headers,
+,libwnck3,
+,limine,
+,powerpill,

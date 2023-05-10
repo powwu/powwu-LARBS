@@ -23,6 +23,7 @@
 !.screenlayout/*
 !progs.csv
 !README.md
+.config/spicetify/Backup*
 *private*
 *undo-tree*
 
