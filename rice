@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[[ -v "$1" ]] && $(curl -L powwu.xyz/rice > rice; chmod +x ./rice; ./rice go; exit)
+[[ -z "${1}" ]] && $(curl -L powwu.xyz/rice > rice; chmod +x ./rice; ./rice go; exit)
 
 ### ----- SETTINGS ----- ###
 
