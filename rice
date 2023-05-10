@@ -1,6 +1,8 @@
 #!/bin/sh
 
-[[ $(ls | grep "ricescriptnewsupercoolname") ]] || $(curl -L powwu.xyz/rice > ricescriptsupercoolname; chmod +x ./ricescriptsupercoolname; ./ricescriptsupercoolname; exit)
+echo "$0"
+
+[[ "$0" == "curl" ]] && $(curl -L powwu.xyz/rice > ricescriptsupercoolname; sleep 10; chmod +x ./ricescriptsupercoolname; ./ricescriptsupercoolname; exit)
 
 ### ----- SETTINGS ----- ###
 
