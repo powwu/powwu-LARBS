@@ -2,9 +2,16 @@
 
 ### ----- SETTINGS ----- ###
 
+echo "Do you wish to install this program?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) make install; break;;
+        No ) exit;;
+    esac
+done
+
 ## Change the values accordingly.
 DPI=100;
-BOOT_DEVICE=/dev/nvme0n1 # device, NOT partition (do not use /dev/nvme0n1p1)
 
 ## BOOLEANS: Comment out settings that you don't want applied.
 # Install new bootloader Limine. Will create a new default EFI entry. May only work automated if you have a /boot partition.
@@ -72,15 +79,15 @@ ExecStart=-/usr/bin/mingetty --autologin $name --noclear %I $TERM" > /etc/system
 }
 
 install_limine() {
-   BOOT_DEVICE=$(eval $(lsblk -oMOUNTPOINT,PKNAME -P | grep 'MOUNTPOINT="/"'); echo $PKNAME)
-   ROOT_PARTUUID=$(eval $(lsblk -oMOUNTPOINT,PARTUUID -P | grep 'MOUNTPOINT="/"'); echo $PARTUUID)
-   SWAP=""
-   [[ -v SWAPON ]] && SWAP=$(eval $(lsblk -oMOUNTPOINT,PARTUUID -P | /bin/grep 'MOUNTPOINT="\[SWAP\]"'); echo $PARTUUID | /bin/xargs /bin/echo "resume=PARTUUID=" | /bin/sed 's/\s*//g')
-   cp /usr/share/limine/limine.sys /boot/
-   limine-deploy $BOOT_DEVICE
-   mkdir /boot/EFI/BOOT/
-   cp /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/
-   echo "TIMEOUT=0
+    BOOT_DEVICE=$(eval $(lsblk -oMOUNTPOINT,PKNAME -P | grep 'MOUNTPOINT="/boot"'); echo $PKNAME)
+    ROOT_PARTUUID=$(eval $(lsblk -oMOUNTPOINT,PARTUUID -P | grep 'MOUNTPOINT="/"'); echo $PARTUUID)
+    SWAP=""
+    [[ -v SWAPON ]] && SWAP=$(eval $(lsblk -oMOUNTPOINT,PARTUUID -P | grep 'MOUNTPOINT="\[SWAP\]"'); echo $PARTUUID | /bin/xargs /bin/echo "resume=PARTUUID=" | /bin/sed 's/\s*//g')
+    cp /usr/share/limine/limine.sys /boot/
+    limine-deploy $BOOT_DEVICE
+    mkdir /boot/EFI/BOOT/
+    cp /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/
+    echo "TIMEOUT=0
 
 :Arch Linux
     PROTOCOL=linux
@@ -89,8 +96,107 @@ install_limine() {
     MODULE_PATH=boot:///initramfs-linux.img" > /boot/limine.cfg
 }
 
-# check if settings are read
-[[ -v SETTINGS_COMPLETED ]] || error "\$SETTINGS_COMPLETED not set; modify this script to configure your settings and try again\n";
+config() {
+    # beep no more
+    rmmod pcspkr
+    echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
+
+    # zsh as default shell
+    chsh -s /bin/zsh "$name" >/dev/null 2>&1
+    sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
+
+    # dbus stuff
+    dbus-uuidgen > /var/lib/dbus/machine-id
+    echo "export \$(dbus-launch)" > /etc/profile.d/dbus.sh
+
+    # tap to click
+    [ ! -f /etc/X11/xorg.conf.d/40-libinput.conf ] && printf 'Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+        # Enable left mouse button by tapping
+        Option "Tapping" "on"
+        EndSection' > /etc/X11/xorg.conf.d/40-libinput.conf
+
+    # fluidsynth pulseaudio fix
+    grep -q "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" /etc/conf.d/fluidsynth || echo "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" >> /etc/conf.d/fluidsynth
+
+    # start pulseaudio (really pipewire but yknow)
+    pkill -15 -x 'pulseaudio'; sudo -u "$name" pulseaudio --start
+
+    # enable autologin
+    [[ -v AUTOLOGIN ]] && autologin
+
+    # make needed groups
+    groups=("$name" "audio" "input" "vboxusers" "video")
+    for g in "${groups[@]}"
+    do
+        groupadd $g
+        sudo usermod -a -G $g $name
+    done
+
+    # register commonly used folders
+    mkdir /home/$name/{Downloads,Documents,Games,Projects,Music,Screenshots}
+
+    # make sure that the home folder is owned completely
+    sudo chown -R $name:$name /home/$name/
+
+    # install spacemacs
+    git clone https://github.com/syl20bnr/spacemacs /home/$name/.emacs.d
+
+    # wallpaper/pywal config
+    pywalfox install
+    git clone https://github.com/powwu/wallpapers.git /home/$name/Wallpapers
+    cd /home/$name/Wallpapers && 7z x wallpapers.7z.001 -pFTQmDd3rd6PxcKgF328C3N6XnzUW63PFiFd
+
+    # automatic mirror refreshing
+    systemctl enable reflector
+
+    # network tingz
+    systemctl enable wpa_supplicant connman
+
+    # configure power button behavior
+    xconf-query -c xfce4-power-manager -p /xfce4-power-manager/power-button-action -s 3
+
+    # configure fingerprint reader
+    files=("system-login" "system-local-login" "sudo")
+    for f in files
+    do
+        # these commands are in reverse order of the final file, as they are each prepended
+        sed -i '1 a\auth   	sufficient  	pam_unix.so try_first_pass nullok' /etc/pam.d/$f
+        sed -i '1 a\auth    sufficient      pam_fprintd_grosshack.so' /etc/pam.d/$f
+    done
+
+    # configure mirrorlist
+    systemctl enable --now reflector
+
+    # configure default apps
+    xdg-mime default thunderbird.desktop x-scheme-handler/mailto
+    xdg-mime default thunderbird.desktop x-scheme-handler/mid
+    xdg-mime default nomacs.desktop image/png
+    xdg-mime default nomacs.desktop image/jpeg
+    xdg-mime default nemo.desktop inode/directory
+    xdg-mime default thunderbird.desktop message/rfc822
+    xdg-mime default firefox.desktop x-scheme-handler/http
+    xdg-mime default firefox.desktop x-scheme-handler/https
+    xdg-mime default emacs.desktop text/plain
+
+    # give accts write permissions to spotify files
+    sudo chmod a+wr /opt/spotify
+    sudo chmod a+wr /opt/spotify/Apps -R
+
+    # make sure that all files in $PATH (that useracc has access to) are executable
+    PATH=$(sudo -u $name zsh -c 'echo $PATH') # single quotes to not evaluate $PATH right away
+    echo $PATH | tr ":" "\n" | while read -r line; do sudo chmod -x -R $line; done
+
+    # make sure power button keycodes can go through
+    sudo sed -i 's/#HandlePowerKey=poweroff/HandlePowerKey=ignore/' /etc/systemd/logind.conf
+    sudo sed -i 's/#PowerKeyIgnoreInhibited=no/PowerKeyIgnoreInhibited=yes/' /etc/systemd/logind.conf
+
+    # install limine
+    [[ -v INSTALL_LIMINE ]] && install_limine
+}
 
 # check for root & update system
 printf "Updating package repositories, please wait...\n\n"
@@ -154,104 +260,8 @@ manualinstall yay
 # install packages
 installationloop
 
-# beep no more
-systembeepoff
-
-# zsh as default shell
-chsh -s /bin/zsh "$name" >/dev/null 2>&1
-sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
-
-# dbus stuff
-dbus-uuidgen > /var/lib/dbus/machine-id
-echo "export \$(dbus-launch)" > /etc/profile.d/dbus.sh
-
-# tap to click
-[ ! -f /etc/X11/xorg.conf.d/40-libinput.conf ] && printf 'Section "InputClass"
-        Identifier "libinput touchpad catchall"
-        MatchIsTouchpad "on"
-        MatchDevicePath "/dev/input/event*"
-        Driver "libinput"
-	# Enable left mouse button by tapping
-	Option "Tapping" "on"
-EndSection' > /etc/X11/xorg.conf.d/40-libinput.conf
-
-# fluidsynth pulseaudio fix
-grep -q "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" /etc/conf.d/fluidsynth || echo "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" >> /etc/conf.d/fluidsynth
-
-# start pulseaudio (really pipewire but yknow)
-pkill -15 -x 'pulseaudio'; sudo -u "$name" pulseaudio --start
-
-# enable autologin
-[[ -v AUTOLOGIN ]] && autologin
-
-# make needed groups
-groups=("$name" "audio" "input" "vboxusers" "video")
-for g in "${groups[@]}"
-do
-    groupadd $g
-    sudo usermod -a -G $g $name
-done
-
-# register commonly used folders
-mkdir /home/$name/{Downloads,Documents,Games,Projects,Music,Screenshots}
-
-# make sure that the home folder is owned completely
-sudo chown -R $name:$name /home/$name/
-
-# install spacemacs
-git clone https://github.com/syl20bnr/spacemacs /home/$name/.emacs.d
-
-# wallpaper/pywal config
-pywalfox install
-git clone https://github.com/powwu/wallpapers.git /home/$name/Wallpapers
-cd /home/$name/Wallpapers && 7z x wallpapers.7z.001 -pFTQmDd3rd6PxcKgF328C3N6XnzUW63PFiFd
-
-# automatic mirror refreshing
-systemctl enable reflector
-
-# network tingz
-systemctl enable wpa_supplicant connman
-
-# configure power button behavior
-xconf-query -c xfce4-power-manager -p /xfce4-power-manager/power-button-action -s 3
-
-# configure fingerprint reader
-files=("system-login" "system-local-login" "sudo")
-for f in files
-do
-    # these commands are in reverse order of the final file, as they are each prepended
-    sed -i '1 a\auth   	sufficient  	pam_unix.so try_first_pass nullok' /etc/pam.d/$f
-    sed -i '1 a\auth    sufficient      pam_fprintd_grosshack.so' /etc/pam.d/$f
-done
-
-# configure mirrorlist
-systemctl enable --now reflector
-
-# configure default apps
-xdg-mime default thunderbird.desktop x-scheme-handler/mailto
-xdg-mime default thunderbird.desktop x-scheme-handler/mid
-xdg-mime default nomacs.desktop image/png
-xdg-mime default nomacs.desktop image/jpeg
-xdg-mime default nemo.desktop inode/directory
-xdg-mime default thunderbird.desktop message/rfc822
-xdg-mime default firefox.desktop x-scheme-handler/http
-xdg-mime default firefox.desktop x-scheme-handler/https
-xdg-mime default emacs.desktop text/plain
-
-# give accts write permissions to spotify files
-sudo chmod a+wr /opt/spotify
-sudo chmod a+wr /opt/spotify/Apps -R
-
-# make sure that all files in $PATH (that useracc has access to) are executable
-PATH=$(sudo -u $name zsh -c 'echo $PATH') # single quotes to not evaluate $PATH right away
-echo $PATH | tr ":" "\n" | while read -r line; do sudo chmod -x -R $line; done
-
-# make sure power button keycodes can go through
-sudo sed -i 's/#HandlePowerKey=poweroff/HandlePowerKey=ignore/' /etc/systemd/logind.conf
-sudo sed -i 's/#PowerKeyIgnoreInhibited=no/PowerKeyIgnoreInhibited=yes/' /etc/systemd/logind.conf
-
-# install limine
-[[ -v INSTALL_LIMINE ]] && install_limine
+# configure system
+configure
 
 # read timer
 duration=$(( SECONDS - start ))
