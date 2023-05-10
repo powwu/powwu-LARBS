@@ -17,13 +17,13 @@
 !.config/spicetify/Extensions/*
 !.config/spicetify/CustomApps/*
 !.config/spicetify/config.ini
-!.config/pywal-discord/*
-!.config/BetterDiscord/plugins/*
-!.config/BetterDiscord/data/stable/*
+!.config/pywal-discord/
+!.config/BetterDiscord/plugins/
+!.config/BetterDiscord/data/stable/
 !.screenlayout/*
 !progs.csv
 !README.md
-.config/spicetify/Backup*
+.config/spicetify/Backup/*
 *private*
 *undo-tree*
 
