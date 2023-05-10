@@ -2,33 +2,29 @@
 
 ### ----- SETTINGS ----- ###
 
-echo "Do you wish to install this program?"
+echo "Do you wish to install a new bootloader, Limine? This will create a new default EFI entry."
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) make install; break;;
-        No ) exit;;
+        Yes ) INSTALL_LIMINE=""; break;;
+        No ) break;;
     esac
 done
 
-## Change the values accordingly.
-DPI=100;
+echo "Do you wish to use the Chaotic AUR in conjunction with the regular AUR? This will provide faster download times, but adds another layer of vulnerability."
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) CHAOTIC_AUR=""; break;;
+        No ) break;;
+    esac
+done
 
-## BOOLEANS: Comment out settings that you don't want applied.
-# Install new bootloader Limine. Will create a new default EFI entry. May only work automated if you have a /boot partition.
-export INSTALL_LIMINE
-
-# Use swap with LIMINE params (requires that swap be mounted already, double check!)
-export SWAPON
-
-# Use chaotic-aur (does not affect using normal aur)
-export CHAOTIC_AUR
-
-# Automatic login
-export AUTOLOGIN
-
-# Mark settings as reviewed; uncomment me to continue
-#export SETTINGS_COMPLETED
-
+echo "Do you wish to automatically login on system startup?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) AUTOLOGIN=""; break;;
+        No ) break;;
+    esac
+done
 
 ### ----- END SETTINGS ----- ###
 
@@ -82,12 +78,12 @@ install_limine() {
     BOOT_DEVICE=$(eval $(lsblk -oMOUNTPOINT,PKNAME -P | grep 'MOUNTPOINT="/boot"'); echo $PKNAME)
     ROOT_PARTUUID=$(eval $(lsblk -oMOUNTPOINT,PARTUUID -P | grep 'MOUNTPOINT="/"'); echo $PARTUUID)
     SWAP=""
-    [[ -v SWAPON ]] && SWAP=$(eval $(lsblk -oMOUNTPOINT,PARTUUID -P | grep 'MOUNTPOINT="\[SWAP\]"'); echo $PARTUUID | /bin/xargs /bin/echo "resume=PARTUUID=" | /bin/sed 's/\s*//g')
+    [[ blkid | grep "swap" ]] && SWAP=$(eval $(lsblk -oMOUNTPOINT,PARTUUID -P | grep 'MOUNTPOINT="\[SWAP\]"'); echo $PARTUUID | /bin/xargs /bin/echo "resume=PARTUUID=" | /bin/sed 's/\s*//g')
     cp /usr/share/limine/limine.sys /boot/
     limine-deploy $BOOT_DEVICE
     mkdir /boot/EFI/BOOT/
     cp /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/
-    echo "TIMEOUT=0
+    echo "TIMEOUT=1
 
 :Arch Linux
     PROTOCOL=linux
@@ -239,6 +235,7 @@ echo "$name:$pass1" | chpasswd
 unset pass1 pass2
 
 # clone repo as users home folder
+rm -rf /home/$name
 git clone https://github.com/powwu/rice "/home/$name"
 usermod -a -G wheel "$name" && chown "$name":wheel /home/"$name"
 export repodir="/home/$name/"; mkdir -p "$repodir"; chown -R "$name":wheel "$(dirname "$repodir")"
