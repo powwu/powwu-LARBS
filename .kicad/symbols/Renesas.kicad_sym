@@ -1,0 +1,168 @@
+(kicad_symbol_lib (version 20220914) (generator kicad_symbol_editor)
+  (symbol "RJK0653DPB-00#J5" (pin_numbers hide) (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+    (property "Reference" "T" (at -1.27 5.08 0)
+      (effects (font (size 1.524 1.524)))
+    )
+    (property "Value" "RJK0653DPB-00#J5" (at -1.27 7.62 0)
+      (effects (font (size 1.524 1.524)))
+    )
+    (property "Footprint" "Renesas:LFPAK-NFET" (at 0 5.08 0)
+      (effects (font (size 1.524 1.524)) hide)
+    )
+    (property "Datasheet" "" (at 0 5.08 0)
+      (effects (font (size 1.524 1.524)) hide)
+    )
+    (property "Manufacturer" "Renesas" (at 0 5.08 0)
+      (effects (font (size 1.524 1.524)) hide)
+    )
+    (property "Voltage" "60V" (at -2.54 5.08 0)
+      (effects (font (size 1.524 1.524)) hide)
+    )
+    (property "Amps" "45A" (at 5.08 5.08 0)
+      (effects (font (size 1.524 1.524)) hide)
+    )
+    (property "Edit" "2017-05-11" (at 8.89 15.24 0)
+      (effects (font (size 1.524 1.524)) hide)
+    )
+    (symbol "RJK0653DPB-00#J5_0_1"
+      (polyline
+        (pts
+          (xy -1.27 1.27)
+          (xy -1.27 -1.27)
+        )
+        (stroke (width 0) (type solid))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -0.762 -1.016)
+          (xy -0.762 -1.524)
+        )
+        (stroke (width 0) (type solid))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -0.762 0)
+          (xy -0.254 -0.508)
+        )
+        (stroke (width 0) (type solid))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -0.762 0)
+          (xy -0.254 0.508)
+        )
+        (stroke (width 0) (type solid))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -0.762 0.508)
+          (xy -0.762 -0.508)
+        )
+        (stroke (width 0) (type solid))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -0.762 1.524)
+          (xy -0.762 1.016)
+        )
+        (stroke (width 0) (type solid))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 0 -1.27)
+          (xy 0 -2.54)
+        )
+        (stroke (width 0) (type solid))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 0 1.27)
+          (xy 0 2.54)
+        )
+        (stroke (width 0) (type solid))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 0.508 -0.508)
+          (xy 1.016 0.508)
+        )
+        (stroke (width 0) (type solid))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 0.508 0.508)
+          (xy 1.524 0.508)
+        )
+        (stroke (width 0) (type solid))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 1.016 0.508)
+          (xy 1.016 0.762)
+        )
+        (stroke (width 0) (type solid))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -0.762 -1.27)
+          (xy 1.016 -1.27)
+          (xy 1.016 -0.508)
+        )
+        (stroke (width 0) (type solid))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -0.762 0)
+          (xy 0 0)
+          (xy 0 -1.27)
+        )
+        (stroke (width 0) (type solid))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -0.762 1.27)
+          (xy 1.016 1.27)
+          (xy 1.016 0.762)
+        )
+        (stroke (width 0) (type solid))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 0.508 -0.508)
+          (xy 1.524 -0.508)
+          (xy 1.016 0.508)
+        )
+        (stroke (width 0) (type solid))
+        (fill (type none))
+      )
+    )
+    (symbol "RJK0653DPB-00#J5_1_1"
+      (pin input line (at 0 2.54 0) (length 0)
+        (name "D" (effects (font (size 1.27 1.27))))
+        (number "D" (effects (font (size 1.27 1.27))))
+      )
+      (pin input line (at -2.54 0 0) (length 1.27)
+        (name "G" (effects (font (size 1.27 1.27))))
+        (number "G" (effects (font (size 1.27 1.27))))
+      )
+      (pin passive line (at 0 -2.54 0) (length 0)
+        (name "S" (effects (font (size 1.27 1.27))))
+        (number "S" (effects (font (size 1.27 1.27))))
+      )
+    )
+  )
+)
