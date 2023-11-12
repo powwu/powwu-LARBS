@@ -1,12 +1,13 @@
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_FIND_NO_DUPS
-setopt HIST_SAVE_NO_DUPS
+HISTSIZE=100000
+SAVEHIST=100000
+#setopt HIST_EXPIRE_DUPS_FIRST
+#setopt HIST_IGNORE_DUPS
+#setopt HIST_IGNORE_ALL_DUPS
+#setopt HIST_IGNORE_SPACE
+#setopt HIST_FIND_NO_DUPS
+#setopt HIST_SAVE_NO_DUPS
+setopt INC_APPEND_HISTORY
 PROMPT='%m%F{green}%B%(?.%#.%F{red}!)%b '
 RPROMPT=' %F{red}%=%(?..%?)'
 
@@ -16,6 +17,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 PATH="$HOME/go/bin/:$HOME/.local/bin/:$HOME/.cargo/bin/:/root/cargo/bin/:$HOME/Wallpapers/bin/:$HOME/.yarn/bin/:$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
 # Aliases
+alias sudo=doas
 alias hhkbmode='xmodmap -e "keycode 22 = grave" && xmodmap -e "keycode 49 = BackSpace"'
 alias osumaps='mv ~/Downloads/*.osz ~/Games/osu/drive_c/osu/Songs/'
 alias ovpn='sudo openvpn --config ~/owopenvpn-3.ovpn'
@@ -34,7 +36,7 @@ alias mic="pkill pulseaudio-equalizer && noisetorch -u && noisetorch -i"
 alias ew="emacs -nw"
 alias nano="echo 'no' && null"
 alias telegram="$HOME/.local/share/Telegram"
-alias discord="electron16 /usr/lib/discord/app.asar --no-sandbox"
+#alias discord="electron16 /usr/lib/discord/app.asar --no-sandbox"
 alias white="feh --bg-fill ~/Wallpapers/white.png"
 alias es="setxkbmap es"
 alias us="setxkbmap us"
@@ -49,7 +51,8 @@ alias snp='zsh -c "cd $HOME/.snippets && find . -type f -not -name \".*\" | gum 
 alias snippet='zsh -c "cd $HOME/.snippets && find . -type f -not -name \".*\" | gum filter | xargs cat; exit"'
 alias less=moar
 alias update='sudo pacman -Sy --noconfirm && sudo powerpill -Su --noconfirm && yay -Su --noconfirm'
-#alias sudo=doas
+alias wdreset='waydroid prop set persist.waydroid.width "" && waydroid prop set persist.waydroid.height "" && waydroid session stop && waydroid session start'
+alias pacman='sudo pacman'
 
 copy() {
 	echo "$1" | xclip -selection c
@@ -120,7 +123,15 @@ cd $HOME
 
 ## start x
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-    exec startx
+    exec Hyprland
+#    exec startx
 fi
 
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+XCURSOR_THEME=macOS-BigSur
+GDK_BACKEND=wayland
+MOZ_ENABLE_WAYLAND=1
+OBSIDIAN_USE_WAYLAND=1
+DISCORD_USE_WAYLAND=1
+export QT_QPA_PLATFORM=wayland

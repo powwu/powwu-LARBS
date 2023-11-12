@@ -1,6 +1,6 @@
 {
     "BDFDB": true,
-    "ZeresPluginLibrary": true,
+    "ZeresPluginLibrary": false,
     "PlatformIndicators": true,
     "KeywordTracker": true,
     "ReadAllNotificationsButton": true,
@@ -17,7 +17,7 @@
     "WhoReacted": false,
     "UserVolumeBooster": false,
     "ImageUtilities": true,
-    "Double Click To Edit": true,
+    "Double Click To Edit": false,
     "TypingIndicator": true,
     "NotificationSounds": false,
     "BetterFriendList": false,
@@ -48,5 +48,5 @@
     "DashToSpaceInChannelName": false,
     "TeX": true,
     "DisableStickerSuggestions": true,
-    "PronounDB": false
+    "PronounDB": true
 }

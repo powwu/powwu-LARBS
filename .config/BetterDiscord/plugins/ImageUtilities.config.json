@@ -53,14 +53,15 @@
 			"imageViewer": "NONE"
 		},
 		"viewerSettings": {
-			"copyImage": true,
-			"details": true,
+			"zoomMode": true,
 			"galleryMode": false,
-			"jumpTo": true,
+			"details": true,
+			"copyImage": true,
 			"saveImage": true,
-			"zoomMode": true
+			"jumpTo": true
 		},
 		"zoomSettings": {
+			"clickMode": false,
 			"lensSize": 1228,
 			"pixelMode": false,
 			"zoomLevel": 2.7,

@@ -1,6 +1,6 @@
 {
     "currentVersionInfo": {
-        "version": "1.4.3",
+        "version": "1.4.4",
         "hasShownChangelog": true
     },
     "settings": {
@@ -63834,6 +63834,1333 @@
                 "tts": false,
                 "type": 0,
                 "_match": "/powwu/"
+            },
+            "1120040395003416658": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "eaeba893c1a48972c81d935f8fc56909",
+                    "discriminator": "0",
+                    "id": "133415276795396096",
+                    "username": "vintr",
+                    "premiumType": 2,
+                    "publicFlags": 128,
+                    "avatarDecoration": "v3_a_88765df09a036906b376704bd8dc27ba",
+                    "globalName": "vintr"
+                },
+                "channel_id": "234802192014508033",
+                "components": [],
+                "content": "!lifealert spam pls",
+                "edited_timestamp": null,
+                "embeds": [],
+                "flags": 0,
+                "id": "1120040395003416658",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": "2023-01-25T00:26:40.840000+00:00",
+                    "deaf": false,
+                    "flags": 0,
+                    "joined_at": "2022-06-08T23:14:48.319000+00:00",
+                    "mute": false,
+                    "nick": "ABSfans",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "256281441078345752",
+                        "317376455627636736",
+                        "746805507821535463"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [],
+                "nonce": "1120040399021277184",
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-18T17:20:39.513000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/!lifealert/"
+            },
+            "1120040396127490068": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "8b2008deeed87323e9ec047bf5373d7f",
+                    "bot": true,
+                    "discriminator": "8491",
+                    "id": "255836257202995202",
+                    "username": "bot sony",
+                    "premiumType": 2,
+                    "publicFlags": 0,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "234802192014508033",
+                "components": [],
+                "content": "LifeAlert received.",
+                "edited_timestamp": null,
+                "embeds": [],
+                "flags": 0,
+                "id": "1120040396127490068",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": false,
+                    "flags": 0,
+                    "joined_at": "2016-12-07T02:45:27.002000+00:00",
+                    "mute": false,
+                    "nick": "dead hobby",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "190330163743948800",
+                        "190346436477583360",
+                        "387703313283416085",
+                        "256281441078345752"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [],
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-18T17:20:39.781000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/LifeAlert received\\./"
+            },
+            "1120040396546900058": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "8b2008deeed87323e9ec047bf5373d7f",
+                    "bot": true,
+                    "discriminator": "8491",
+                    "id": "255836257202995202",
+                    "username": "bot sony",
+                    "premiumType": 2,
+                    "publicFlags": 0,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "325265301958557696",
+                "components": [],
+                "content": "@here",
+                "edited_timestamp": null,
+                "embeds": [
+                    {
+                        "color": 16711680,
+                        "fields": [
+                            {
+                                "inline": true,
+                                "name": "User",
+                                "value": "<@!133415276795396096>"
+                            },
+                            {
+                                "inline": true,
+                                "name": "ID",
+                                "value": "133415276795396096"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Channel",
+                                "value": "<#234802192014508033>"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Time",
+                                "value": "2023-06-18T17:20:39.513000+00:00"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Message",
+                                "value": "!lifealert spam pls"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Jump To Chat",
+                                "value": "https://discord.com/channels/190327149696253952/234802192014508033/1120040396127490068"
+                            }
+                        ],
+                        "title": "Life Alert",
+                        "type": "rich"
+                    }
+                ],
+                "flags": 0,
+                "id": "1120040396546900058",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": false,
+                    "flags": 0,
+                    "joined_at": "2016-12-07T02:45:27.002000+00:00",
+                    "mute": false,
+                    "nick": "dead hobby",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "190330163743948800",
+                        "190346436477583360",
+                        "387703313283416085",
+                        "256281441078345752"
+                    ]
+                },
+                "mention_everyone": true,
+                "mention_roles": [],
+                "mentions": [],
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-18T17:20:39.881000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/!lifealert/"
+            },
+            "1120040397461262378": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "8b2008deeed87323e9ec047bf5373d7f",
+                    "bot": true,
+                    "discriminator": "8491",
+                    "id": "255836257202995202",
+                    "username": "bot sony",
+                    "premiumType": 2,
+                    "publicFlags": 0,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "213157409517076480",
+                "components": [],
+                "content": "",
+                "edited_timestamp": null,
+                "embeds": [
+                    {
+                        "color": 16711680,
+                        "fields": [
+                            {
+                                "inline": true,
+                                "name": "User",
+                                "value": "<@!133415276795396096>"
+                            },
+                            {
+                                "inline": true,
+                                "name": "ID",
+                                "value": "133415276795396096"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Channel",
+                                "value": "<#234802192014508033>"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Time",
+                                "value": "2023-06-18T17:20:39.513000+00:00"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Message",
+                                "value": "!lifealert spam pls"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Has Attachments",
+                                "value": "False"
+                            }
+                        ],
+                        "title": "Deleted Message",
+                        "type": "rich"
+                    }
+                ],
+                "flags": 0,
+                "id": "1120040397461262378",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": false,
+                    "flags": 0,
+                    "joined_at": "2016-12-07T02:45:27.002000+00:00",
+                    "mute": false,
+                    "nick": "dead hobby",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "190330163743948800",
+                        "190346436477583360",
+                        "387703313283416085",
+                        "256281441078345752"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [],
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-18T17:20:40.099000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/!lifealert/"
+            },
+            "1122973555156586648": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "864222f858d4c0f720c877c7f379c49b",
+                    "discriminator": "0",
+                    "id": "227044781472088064",
+                    "username": "stidal",
+                    "publicFlags": 256,
+                    "avatarDecoration": null,
+                    "globalName": "milo"
+                },
+                "channel_id": "190327462087884811",
+                "components": [],
+                "content": "!lifealert porn discord !",
+                "edited_timestamp": null,
+                "embeds": [],
+                "flags": 0,
+                "id": "1122973555156586648",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": false,
+                    "flags": 2,
+                    "joined_at": "2020-11-14T19:29:30.222000+00:00",
+                    "mute": false,
+                    "nick": "milo",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "256281441078345752",
+                        "317376486640189440",
+                        "746805507821535463",
+                        "1043426795384479807"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [],
+                "nonce": "1122973556599160832",
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-26T19:35:59.389000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/!lifealert/"
+            },
+            "1122973555945132092": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "8b2008deeed87323e9ec047bf5373d7f",
+                    "bot": true,
+                    "discriminator": "8491",
+                    "id": "255836257202995202",
+                    "username": "bot sony",
+                    "publicFlags": 0,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "190327462087884811",
+                "components": [],
+                "content": "LifeAlert received.",
+                "edited_timestamp": null,
+                "embeds": [],
+                "flags": 0,
+                "id": "1122973555945132092",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": false,
+                    "flags": 0,
+                    "joined_at": "2016-12-07T02:45:27.002000+00:00",
+                    "mute": false,
+                    "nick": "dead hobby",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "190330163743948800",
+                        "190346436477583360",
+                        "387703313283416085",
+                        "256281441078345752"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [],
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-26T19:35:59.577000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/LifeAlert received\\./"
+            },
+            "1122973556502974464": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "8b2008deeed87323e9ec047bf5373d7f",
+                    "bot": true,
+                    "discriminator": "8491",
+                    "id": "255836257202995202",
+                    "username": "bot sony",
+                    "publicFlags": 0,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "325265301958557696",
+                "components": [],
+                "content": "@here",
+                "edited_timestamp": null,
+                "embeds": [
+                    {
+                        "color": 16711680,
+                        "fields": [
+                            {
+                                "inline": true,
+                                "name": "User",
+                                "value": "<@!227044781472088064>"
+                            },
+                            {
+                                "inline": true,
+                                "name": "ID",
+                                "value": "227044781472088064"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Channel",
+                                "value": "<#190327462087884811>"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Time",
+                                "value": "2023-06-26T19:35:59.389000+00:00"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Message",
+                                "value": "!lifealert porn discord !"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Jump To Chat",
+                                "value": "https://discord.com/channels/190327149696253952/190327462087884811/1122973555945132092"
+                            }
+                        ],
+                        "title": "Life Alert",
+                        "type": "rich"
+                    }
+                ],
+                "flags": 0,
+                "id": "1122973556502974464",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": false,
+                    "flags": 0,
+                    "joined_at": "2016-12-07T02:45:27.002000+00:00",
+                    "mute": false,
+                    "nick": "dead hobby",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "190330163743948800",
+                        "190346436477583360",
+                        "387703313283416085",
+                        "256281441078345752"
+                    ]
+                },
+                "mention_everyone": true,
+                "mention_roles": [],
+                "mentions": [],
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-26T19:35:59.710000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/!lifealert/"
+            },
+            "1122973557929025649": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "8b2008deeed87323e9ec047bf5373d7f",
+                    "bot": true,
+                    "discriminator": "8491",
+                    "id": "255836257202995202",
+                    "username": "bot sony",
+                    "publicFlags": 0,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "213157409517076480",
+                "components": [],
+                "content": "",
+                "edited_timestamp": null,
+                "embeds": [
+                    {
+                        "color": 16711680,
+                        "fields": [
+                            {
+                                "inline": true,
+                                "name": "User",
+                                "value": "<@!227044781472088064>"
+                            },
+                            {
+                                "inline": true,
+                                "name": "ID",
+                                "value": "227044781472088064"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Channel",
+                                "value": "<#190327462087884811>"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Time",
+                                "value": "2023-06-26T19:35:59.389000+00:00"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Message",
+                                "value": "!lifealert porn discord !"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Has Attachments",
+                                "value": "False"
+                            }
+                        ],
+                        "title": "Deleted Message",
+                        "type": "rich"
+                    }
+                ],
+                "flags": 0,
+                "id": "1122973557929025649",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": false,
+                    "flags": 0,
+                    "joined_at": "2016-12-07T02:45:27.002000+00:00",
+                    "mute": false,
+                    "nick": "dead hobby",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "190330163743948800",
+                        "190346436477583360",
+                        "387703313283416085",
+                        "256281441078345752"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [],
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-26T19:36:00.050000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/!lifealert/"
+            },
+            "1122973586106368020": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "c12801e10102687e27f97a154070e72c",
+                    "discriminator": "0",
+                    "id": "198941178140295169",
+                    "username": "nooddjob",
+                    "publicFlags": 256,
+                    "avatarDecoration": null,
+                    "globalName": "Snorlax"
+                },
+                "channel_id": "278960636153692160",
+                "components": [],
+                "content": "!lifealert right here <a:policeBlink:996689970821607497>",
+                "edited_timestamp": null,
+                "embeds": [],
+                "flags": 0,
+                "id": "1122973586106368020",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": "2023-05-01T14:20:12.750000+00:00",
+                    "deaf": false,
+                    "flags": 2,
+                    "joined_at": "2018-11-16T20:12:19.286000+00:00",
+                    "mute": false,
+                    "nick": "DuoDavid - LETS GOLF",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "256281441078345752",
+                        "317376486640189440",
+                        "339142115126935554",
+                        "880239418382901249"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [],
+                "nonce": "1122973584172515328",
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-26T19:36:06.768000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/!lifealert/"
+            },
+            "1122973586991358224": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "8b2008deeed87323e9ec047bf5373d7f",
+                    "bot": true,
+                    "discriminator": "8491",
+                    "id": "255836257202995202",
+                    "username": "bot sony",
+                    "publicFlags": 0,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "278960636153692160",
+                "components": [],
+                "content": "LifeAlert received.",
+                "edited_timestamp": null,
+                "embeds": [],
+                "flags": 0,
+                "id": "1122973586991358224",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": false,
+                    "flags": 0,
+                    "joined_at": "2016-12-07T02:45:27.002000+00:00",
+                    "mute": false,
+                    "nick": "dead hobby",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "190330163743948800",
+                        "190346436477583360",
+                        "387703313283416085",
+                        "256281441078345752"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [],
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-26T19:36:06.979000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/LifeAlert received\\./"
+            },
+            "1122973587595333722": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "8b2008deeed87323e9ec047bf5373d7f",
+                    "bot": true,
+                    "discriminator": "8491",
+                    "id": "255836257202995202",
+                    "username": "bot sony",
+                    "publicFlags": 0,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "325265301958557696",
+                "components": [],
+                "content": "@here",
+                "edited_timestamp": null,
+                "embeds": [
+                    {
+                        "color": 16711680,
+                        "fields": [
+                            {
+                                "inline": true,
+                                "name": "User",
+                                "value": "<@!198941178140295169>"
+                            },
+                            {
+                                "inline": true,
+                                "name": "ID",
+                                "value": "198941178140295169"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Channel",
+                                "value": "<#278960636153692160>"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Time",
+                                "value": "2023-06-26T19:36:06.768000+00:00"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Message",
+                                "value": "!lifealert right here :policeBlink:"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Jump To Chat",
+                                "value": "https://discord.com/channels/190327149696253952/278960636153692160/1122973586991358224"
+                            }
+                        ],
+                        "title": "Life Alert",
+                        "type": "rich"
+                    }
+                ],
+                "flags": 0,
+                "id": "1122973587595333722",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": false,
+                    "flags": 0,
+                    "joined_at": "2016-12-07T02:45:27.002000+00:00",
+                    "mute": false,
+                    "nick": "dead hobby",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "190330163743948800",
+                        "190346436477583360",
+                        "387703313283416085",
+                        "256281441078345752"
+                    ]
+                },
+                "mention_everyone": true,
+                "mention_roles": [],
+                "mentions": [],
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-26T19:36:07.123000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/!lifealert/"
+            },
+            "1122973589809938492": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "8b2008deeed87323e9ec047bf5373d7f",
+                    "bot": true,
+                    "discriminator": "8491",
+                    "id": "255836257202995202",
+                    "username": "bot sony",
+                    "publicFlags": 0,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "213157409517076480",
+                "components": [],
+                "content": "",
+                "edited_timestamp": null,
+                "embeds": [
+                    {
+                        "color": 16711680,
+                        "fields": [
+                            {
+                                "inline": true,
+                                "name": "User",
+                                "value": "<@!198941178140295169>"
+                            },
+                            {
+                                "inline": true,
+                                "name": "ID",
+                                "value": "198941178140295169"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Channel",
+                                "value": "<#278960636153692160>"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Time",
+                                "value": "2023-06-26T19:36:06.768000+00:00"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Message",
+                                "value": "!lifealert right here :policeBlink:"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Has Attachments",
+                                "value": "False"
+                            }
+                        ],
+                        "title": "Deleted Message",
+                        "type": "rich"
+                    }
+                ],
+                "flags": 0,
+                "id": "1122973589809938492",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": false,
+                    "flags": 0,
+                    "joined_at": "2016-12-07T02:45:27.002000+00:00",
+                    "mute": false,
+                    "nick": "dead hobby",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "190330163743948800",
+                        "190346436477583360",
+                        "387703313283416085",
+                        "256281441078345752"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [],
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-26T19:36:07.651000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/!lifealert/"
+            },
+            "1122973617416851577": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "e131df512e8057be34673940e4157369",
+                    "discriminator": "0",
+                    "id": "389069618305564673",
+                    "username": "issey83",
+                    "publicFlags": 0,
+                    "avatarDecoration": null,
+                    "globalName": "issey83"
+                },
+                "channel_id": "234802192014508033",
+                "components": [],
+                "content": "!lifealert spam",
+                "edited_timestamp": null,
+                "embeds": [],
+                "flags": 0,
+                "id": "1122973617416851577",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": false,
+                    "flags": 0,
+                    "joined_at": "2021-03-09T03:13:18.149000+00:00",
+                    "mute": false,
+                    "nick": null,
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "317376733340762114",
+                        "339142115126935554",
+                        "759171089787256853",
+                        "746805507821535463",
+                        "256281441078345752",
+                        "897489142873743402"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [],
+                "message_reference": {
+                    "channel_id": "234802192014508033",
+                    "guild_id": "190327149696253952",
+                    "message_id": "1122973473476710511"
+                },
+                "nonce": "1122973614551859200",
+                "pinned": false,
+                "referenced_message": {
+                    "attachments": [],
+                    "author": {
+                        "avatar": "811ec944f21bfb1d5387f6245f65b7b2",
+                        "avatar_decoration": null,
+                        "discriminator": "0",
+                        "global_name": "PUBG 【관리자】",
+                        "id": "641420345601032193",
+                        "public_flags": 0,
+                        "username": "iqxver"
+                    },
+                    "channel_id": "234802192014508033",
+                    "components": [],
+                    "content": "Great server with nudes🥰\nhttps://discord.gg/sexnudes\n@everyone",
+                    "edited_timestamp": null,
+                    "embeds": [],
+                    "flags": 0,
+                    "id": "1122973473476710511",
+                    "mention_everyone": false,
+                    "mention_roles": [],
+                    "mentions": [],
+                    "pinned": false,
+                    "timestamp": "2023-06-26T19:35:39.915000+00:00",
+                    "tts": false,
+                    "type": 0
+                },
+                "timestamp": "2023-06-26T19:36:14.233000+00:00",
+                "tts": false,
+                "type": 19,
+                "_match": "/!lifealert/"
+            },
+            "1122973618763219014": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "8b2008deeed87323e9ec047bf5373d7f",
+                    "bot": true,
+                    "discriminator": "8491",
+                    "id": "255836257202995202",
+                    "username": "bot sony",
+                    "publicFlags": 0,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "234802192014508033",
+                "components": [],
+                "content": "LifeAlert received.",
+                "edited_timestamp": null,
+                "embeds": [],
+                "flags": 0,
+                "id": "1122973618763219014",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": false,
+                    "flags": 0,
+                    "joined_at": "2016-12-07T02:45:27.002000+00:00",
+                    "mute": false,
+                    "nick": "dead hobby",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "190330163743948800",
+                        "190346436477583360",
+                        "387703313283416085",
+                        "256281441078345752"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [],
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-26T19:36:14.554000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/LifeAlert received\\./"
+            },
+            "1122973619656593408": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "8b2008deeed87323e9ec047bf5373d7f",
+                    "bot": true,
+                    "discriminator": "8491",
+                    "id": "255836257202995202",
+                    "username": "bot sony",
+                    "publicFlags": 0,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "325265301958557696",
+                "components": [],
+                "content": "@here",
+                "edited_timestamp": null,
+                "embeds": [
+                    {
+                        "color": 16711680,
+                        "fields": [
+                            {
+                                "inline": true,
+                                "name": "User",
+                                "value": "<@389069618305564673>"
+                            },
+                            {
+                                "inline": true,
+                                "name": "ID",
+                                "value": "389069618305564673"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Channel",
+                                "value": "<#234802192014508033>"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Time",
+                                "value": "2023-06-26T19:36:14.233000+00:00"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Message",
+                                "value": "!lifealert spam"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Jump To Chat",
+                                "value": "https://discord.com/channels/190327149696253952/234802192014508033/1122973618763219014"
+                            }
+                        ],
+                        "title": "Life Alert",
+                        "type": "rich"
+                    }
+                ],
+                "flags": 0,
+                "id": "1122973619656593408",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": false,
+                    "flags": 0,
+                    "joined_at": "2016-12-07T02:45:27.002000+00:00",
+                    "mute": false,
+                    "nick": "dead hobby",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "190330163743948800",
+                        "190346436477583360",
+                        "387703313283416085",
+                        "256281441078345752"
+                    ]
+                },
+                "mention_everyone": true,
+                "mention_roles": [],
+                "mentions": [],
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-26T19:36:14.767000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/!lifealert/"
+            },
+            "1122973621879570564": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "8b2008deeed87323e9ec047bf5373d7f",
+                    "bot": true,
+                    "discriminator": "8491",
+                    "id": "255836257202995202",
+                    "username": "bot sony",
+                    "publicFlags": 0,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "213157409517076480",
+                "components": [],
+                "content": "",
+                "edited_timestamp": null,
+                "embeds": [
+                    {
+                        "color": 16711680,
+                        "fields": [
+                            {
+                                "inline": true,
+                                "name": "User",
+                                "value": "<@389069618305564673>"
+                            },
+                            {
+                                "inline": true,
+                                "name": "ID",
+                                "value": "389069618305564673"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Channel",
+                                "value": "<#234802192014508033>"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Time",
+                                "value": "2023-06-26T19:36:14.233000+00:00"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Message",
+                                "value": "!lifealert spam"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Has Attachments",
+                                "value": "False"
+                            }
+                        ],
+                        "title": "Deleted Message",
+                        "type": "rich"
+                    }
+                ],
+                "flags": 0,
+                "id": "1122973621879570564",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": false,
+                    "flags": 0,
+                    "joined_at": "2016-12-07T02:45:27.002000+00:00",
+                    "mute": false,
+                    "nick": "dead hobby",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "190330163743948800",
+                        "190346436477583360",
+                        "387703313283416085",
+                        "256281441078345752"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [],
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-26T19:36:15.297000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/!lifealert/"
+            },
+            "1125418174653923388": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "01688a7903e98a478f610653fc26fbf7",
+                    "discriminator": "0",
+                    "id": "147952470948184064",
+                    "username": "shamb",
+                    "publicFlags": 128,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "234802192014508033",
+                "components": [],
+                "content": "!lifealert",
+                "edited_timestamp": null,
+                "embeds": [],
+                "flags": 0,
+                "id": "1125418174653923388",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": "2023-02-10T05:28:45.293000+00:00",
+                    "deaf": false,
+                    "flags": 2,
+                    "joined_at": "2021-10-12T02:27:09.273000+00:00",
+                    "mute": false,
+                    "nick": null,
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "317376875183996929",
+                        "339142115126935554",
+                        "746805507821535463",
+                        "256281441078345752",
+                        "1043426795384479807"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [
+                    {
+                        "avatar": "fea39b000b6554f8f2d140d7bbff304f",
+                        "discriminator": "0",
+                        "id": "307194433546354689",
+                        "username": "binb0y",
+                        "publicFlags": 128,
+                        "avatarDecoration": null,
+                        "globalName": "binb0y"
+                    }
+                ],
+                "message_reference": {
+                    "channel_id": "234802192014508033",
+                    "guild_id": "190327149696253952",
+                    "message_id": "1125418077971021904"
+                },
+                "nonce": "1125418173567336448",
+                "pinned": false,
+                "referenced_message": {
+                    "attachments": [],
+                    "author": {
+                        "avatar": "fea39b000b6554f8f2d140d7bbff304f",
+                        "avatar_decoration": null,
+                        "discriminator": "0",
+                        "global_name": "binb0y",
+                        "id": "307194433546354689",
+                        "public_flags": 128,
+                        "username": "binb0y"
+                    },
+                    "channel_id": "234802192014508033",
+                    "components": [],
+                    "content": "im 9",
+                    "edited_timestamp": null,
+                    "embeds": [],
+                    "flags": 0,
+                    "id": "1125418077971021904",
+                    "mention_everyone": false,
+                    "mention_roles": [],
+                    "mentions": [
+                        {
+                            "avatar": "917b61bbf9b749fb0b8b3372a1fa9309",
+                            "avatar_decoration": null,
+                            "discriminator": "0",
+                            "global_name": "Velocity",
+                            "id": "157413261724090368",
+                            "public_flags": 0,
+                            "username": "velocity01"
+                        }
+                    ],
+                    "message_reference": {
+                        "channel_id": "234802192014508033",
+                        "guild_id": "190327149696253952",
+                        "message_id": "1125418028046225548"
+                    },
+                    "pinned": false,
+                    "timestamp": "2023-07-03T13:29:39.045000+00:00",
+                    "tts": false,
+                    "type": 19
+                },
+                "timestamp": "2023-07-03T13:30:02.096000+00:00",
+                "tts": false,
+                "type": 19,
+                "_match": "/!lifealert/"
+            },
+            "1125418178634330252": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "8b2008deeed87323e9ec047bf5373d7f",
+                    "bot": true,
+                    "discriminator": "8491",
+                    "id": "255836257202995202",
+                    "username": "bot sony",
+                    "publicFlags": 0,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "213157409517076480",
+                "components": [],
+                "content": "",
+                "edited_timestamp": null,
+                "embeds": [
+                    {
+                        "color": 16711680,
+                        "fields": [
+                            {
+                                "inline": true,
+                                "name": "User",
+                                "value": "<@147952470948184064>"
+                            },
+                            {
+                                "inline": true,
+                                "name": "ID",
+                                "value": "147952470948184064"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Channel",
+                                "value": "<#234802192014508033>"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Time",
+                                "value": "2023-07-03T13:30:02.096000+00:00"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Message",
+                                "value": "!lifealert"
+                            },
+                            {
+                                "inline": false,
+                                "name": "Has Attachments",
+                                "value": "False"
+                            }
+                        ],
+                        "title": "Deleted Message",
+                        "type": "rich"
+                    }
+                ],
+                "flags": 0,
+                "id": "1125418178634330252",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": false,
+                    "flags": 0,
+                    "joined_at": "2016-12-07T02:45:27.002000+00:00",
+                    "mute": false,
+                    "nick": "dead hobby",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "190330163743948800",
+                        "190346436477583360",
+                        "387703313283416085",
+                        "256281441078345752"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [],
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-07-03T13:30:03.045000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/!lifealert/"
+            },
+            "1125418411057500233": {
+                "guild_id": "190327149696253952",
+                "attachments": [],
+                "author": {
+                    "avatar": "01688a7903e98a478f610653fc26fbf7",
+                    "discriminator": "0",
+                    "id": "147952470948184064",
+                    "username": "shamb",
+                    "publicFlags": 128,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "234802192014508033",
+                "components": [],
+                "content": "even if you do !lifealert you have to include a reason",
+                "edited_timestamp": null,
+                "embeds": [],
+                "flags": 0,
+                "id": "1125418411057500233",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": "2023-02-10T05:28:45.293000+00:00",
+                    "deaf": false,
+                    "flags": 2,
+                    "joined_at": "2021-10-12T02:27:09.273000+00:00",
+                    "mute": false,
+                    "nick": null,
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "317376875183996929",
+                        "339142115126935554",
+                        "746805507821535463",
+                        "256281441078345752",
+                        "1043426795384479807"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [],
+                "nonce": "1125418410201579520",
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-07-03T13:30:58.459000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/!lifealert/"
             }
         },
         "notifications": true,

@@ -54,7 +54,7 @@ installationloop() {
 			      "P") pipinstall "$program" "$comment" ;;
 			      *) maininstall "$program" "$comment" ;;
 		    esac
-	  done < /tmp/progs.csv ;
+	  done < /tmp/progs.csv;
 }
 
 chaoticaur() {
@@ -67,10 +67,15 @@ chaoticaur() {
 }
 
 autologin() {
+	# without greeter
     mkdir /etc/systemd/system/getty@tty1.service.d/
     echo "[Service]
 ExecStart=
 ExecStart=-/usr/bin/mingetty --autologin $name --noclear %I $TERM" > /etc/systemd/system/getty@tty1.service.d/override.conf
+
+	# with greeter
+	echo "autologin-user=$name" > /etc/lightdm/lightdm.conf	
+	# also added to autologin group in groups() function
 }
 
 install_limine() {
@@ -126,7 +131,7 @@ config() {
     [[ -v AUTOLOGIN ]] && autologin
 
     # make needed groups
-    groups=("$name" "audio" "input" "vboxusers" "video")
+    groups=("$name" "audio" "input" "vboxusers" "video" "autologin")
     for g in "${groups[@]}"
     do
         groupadd $g
@@ -146,6 +151,9 @@ config() {
     pywalfox install
     git clone https://github.com/powwu/wallpapers.git /home/$name/Wallpapers
     cd /home/$name/Wallpapers && 7z x wallpapers.7z.001 -pFTQmDd3rd6PxcKgF328C3N6XnzUW63PFiFd
+
+    # cursor theme
+    gsettings set org.gnome.desktop.interface cursor-theme macOS-BigSur
 
     # automatic mirror refreshing
     systemctl enable reflector
@@ -169,15 +177,15 @@ config() {
     systemctl enable --now reflector
 
     # configure default apps
-    xdg-mime default thunderbird.desktop x-scheme-handler/mailto
-    xdg-mime default thunderbird.desktop x-scheme-handler/mid
-    xdg-mime default nomacs.desktop image/png
-    xdg-mime default nomacs.desktop image/jpeg
-    xdg-mime default nemo.desktop inode/directory
-    xdg-mime default thunderbird.desktop message/rfc822
-    xdg-mime default firefox.desktop x-scheme-handler/http
-    xdg-mime default firefox.desktop x-scheme-handler/https
-    xdg-mime default emacs.desktop text/plain
+    handlr set x-scheme-handler/mailto thunderbird.desktop
+    handlr set x-scheme-handler/mid thunderbird.desktop
+    handlr set image/png mirage.desktop 
+    handlr set image/jpeg mirage.desktop
+    handlr set inode/directory nemo.desktop
+    handlr set message/rfc822 thunderbird.desktop
+    handlr set x-scheme-handler/http firefox.desktop
+    handlr set x-scheme-handler/https firefox.desktop
+    handlr set text/plain emacs.desktop
 
     # give accts write permissions to spotify files
     sudo chmod a+wr /opt/spotify
@@ -193,6 +201,9 @@ config() {
 
     # install limine
     [[ -v INSTALL_LIMINE ]] && install_limine
+
+    # enable ntpd (time synchronization)
+    sudo systemctl enable ntpd
 }
 
 # check for root & update system

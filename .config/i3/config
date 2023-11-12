@@ -1,5 +1,4 @@
 
-
 ### cool important info ###
 # the majority of this config is stolen from some other persons rice, but i dont remember whose it was. if it was you, thank you very much <3
 ###			###
@@ -18,18 +17,22 @@ set $alt Mod1
 
 font pango:monospace 9
 
+# dbus
+#exec --no-startup-id /usr/lib/xdg-desktop-portal -r
+#exec dbus-update-activation-environment --all
+
 #choose randomly new wallpaper/colorscheme
 bindsym $mod+Shift+w exec wallpaper $wallpaperdir
 
 # authentication agent
-exec --no-startup-id lxpolkit
+#exec --no-startup-id lxpolkit
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- lock
 
-# dbus
-exec --no-startup-id /usr/lib/xdg-desktop-portal -r
+
+
 
 # lock on command
 bindsym $mod+l exec loginctl lock-session
@@ -60,6 +63,8 @@ bindsym $mod+$alt+Return exec birdtray -t
 
 # kill focused window
 bindsym $mod+x kill
+# start xkill
+bindsym $mod+Shift+x exec alacritty --class xkill -e zsh -c xkill
 
 # change focus
 bindsym $mod+Left focus left
@@ -115,6 +120,7 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 ""
+set $ws11 "X"
 
 
 # switch to workspace
@@ -144,12 +150,15 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 #assign [class="Brave"] $ws1
 #assign [class="St"] $ws2
 assign [class="Spotify"] $ws5
+assign [class="xkill"] $ws11
+assign [class="EasyEffects"] $ws5
 assign [class="discord"] $ws3
 assign [class="telegram"] $ws3
 assign [class="element-desktop"] $ws3
 assign [class="firefox"] $ws2
 assign [class="pulseeffects"] $ws10
 assign [title="emacs"] $ws4
+assign [class="obsidian"] $ws4
 assign [title="lutris"] $ws6
 assign [class="Steam"] $ws6
  #reload the configuration file
@@ -179,9 +188,6 @@ client.background       $bg
 
 # funny program chooser
 bindsym $mod+space exec rofi -show drun -opacity "85" -font "Source Code Pro 14" -theme ~/.cache/wal/colors-rofi-dark.rasi
-
-# Start notification daemon with delay (so it obeys dpi)
-exec sleep 5; /usr/lib/xfce4/notifyd/xfce4-notifyd
 
 bindsym $mod+bar exec firefox
 bindsym $mod+Shift+bar exec discord
@@ -215,6 +221,7 @@ bar {
 	mode hide
         hidden_state hide
         modifier Mod4
+	tray_output eDP-1
  colors {
         background $bg
         statusline $fg
@@ -234,7 +241,6 @@ bindsym $mod+m exec ~/.screenlayout/screenlayoutprep.sh && ~/.screenlayout/scree
 
 # configure power button
 bindsym XF86PowerOff exec archlinux-logout
-#exec xfce4-power-manager
 
 hide_edge_borders none
 default_border none
@@ -242,7 +248,6 @@ border_radius 20
 #for_window [title="Plasma"] kill; floating enable; border none
 gaps outer 5
 gaps inner 5
-#exec brave
 # exec discord
 #exec xcompmgr -CcfF -I-.05 -O-.05 -D2
 #exec st
@@ -268,4 +273,18 @@ exec picom --shadow-exclude 'bounding_shaped && !rounded_corners'
 #exec xlayoutdisplay -r 60 -dpi 160
 exec birdtray
 exec udiskie -t
-exec sleep 20 && sudo systemctl start reflector # sudoers file allows this with no password
+exec blueberry-tray
+exec caffeine
+
+exec ~/monitornew.sh
+
+# Start notification daemon with delay (so it obeys dpi)
+exec pkill dunst # dbus likes to start dunst first
+exec sleep 5; /usr/lib/xfce4/notifyd/xfce4-notifyd
+
+# audio fix
+exec pw-metadata -n settings 0 clock.force-quantum 8192
+
+
+# sudoers file allows these with no password
+exec sleep 20 && sudo systemctl start reflector # keep this last

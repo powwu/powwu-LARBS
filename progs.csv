@@ -38,6 +38,7 @@
 ,zsh,"shell good"
 ,i3-gaps-rounded-git,
 ,i3blocks,
+,i3blocks-contrib,
 ,i3status,"i3 status"
 ,rofi,
 ,discord,"dicks out"
@@ -153,3 +154,14 @@
 ,libwnck3,
 ,limine,
 ,powerpill,
+,alsa-utils,"needed for volume status in bar"
+,pkgstats,"arch linux telemetry optin"
+,ripgrep,
+,mirage,
+,songrec,
+,apple_cursors,
+,gtk-engines,
+,qt6-wayland,
+,qt5-wayland,
+,wl-clipboard-git,
+,lightdm,
