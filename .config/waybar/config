@@ -6,7 +6,8 @@
     "spacing":          4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left":     ["hyprland/workspaces", "custom/media"],
-    "modules-right":    ["idle_inhibitor", "pulseaudio", "network", "hyprland/language", "battery", "battery#bat2", "clock", "tray"],
+    "modules-right":    ["idle_inhibitor", "pulseaudio", "network", "battery", "battery#bat2", "clock", "tray"],
+    //"modules-right":    ["idle_inhibitor", "pulseaudio", "network", "hyprland/language", "battery", "battery#bat2", "clock", "tray"],
 
     "start_hidden": true,
     //"mode": "overlay",
@@ -27,6 +28,7 @@
              "7":       "7",
              "8":       "8",
              "9":       "9",
+             "mail":    "",
              "urgent":  "",
              "focused": "",
              "default": ""

@@ -186,6 +186,7 @@ config() {
     handlr set x-scheme-handler/http firefox.desktop
     handlr set x-scheme-handler/https firefox.desktop
     handlr set text/plain emacs.desktop
+    sudo ln -s /usr/bin/firefox-developer-edition /usr/bin/firefox
 
     # give accts write permissions to spotify files
     sudo chmod a+wr /opt/spotify

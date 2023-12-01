@@ -1,25 +1,25 @@
 colors:
   bright:
-    black: '#a29c9d'
-    blue: '#7E8080'
-    cyan: '#EC9EAB'
-    green: '#DA536C'
-    magenta: '#9E9D9E'
-    red: '#D12C53'
-    white: '#e8dfe1'
-    yellow: '#E16D8A'
+    black: '#838287'
+    blue: '#E17984'
+    cyan: '#7B8294'
+    green: '#867A8C'
+    magenta: '#398497'
+    red: '#6A7789'
+    white: '#bcbac2'
+    yellow: '#AD7484'
   normal:
-    black: '#0a0a0a'
-    blue: '#7E8080'
-    cyan: '#EC9EAB'
-    green: '#DA536C'
-    magenta: '#9E9D9E'
-    red: '#D12C53'
-    white: '#e8dfe1'
-    yellow: '#E16D8A'
+    black: '#051018'
+    blue: '#E17984'
+    cyan: '#7B8294'
+    green: '#867A8C'
+    magenta: '#398497'
+    red: '#6A7789'
+    white: '#bcbac2'
+    yellow: '#AD7484'
   primary:
-    background: '#0a0a0a'
-    foreground: '#e8dfe1'
+    background: '#051018'
+    foreground: '#bcbac2'
 window:
   opacity: 0.7
   padding:

@@ -53,6 +53,9 @@ alias less=moar
 alias update='sudo pacman -Sy --noconfirm && sudo powerpill -Su --noconfirm && yay -Su --noconfirm'
 alias wdreset='waydroid prop set persist.waydroid.width "" && waydroid prop set persist.waydroid.height "" && waydroid session stop && waydroid session start'
 alias pacman='sudo pacman'
+alias getip='curl -4s icanhazip.com | xargs echo "GLOBAL: " ; ip -json route get 8.8.8.8 | jq -r ".[].prefsrc" | xargs echo "LOCAL:  "'
+alias fw-fanctrl='systemctl status fw-fanctrl > /dev/null || systemctl start fw-fanctrl; fw-fanctrl'
+
 
 copy() {
 	echo "$1" | xclip -selection c
@@ -116,6 +119,12 @@ man() {
 localproxy() {
 	export http_proxy="http://localhost:8080"
 	export https_proxy="https://localhost:8080"
+}
+
+xwlroot() {
+	xhost si:localuser:root
+	sudo $1
+	xhost -si:localuser:root
 }
 
 ##

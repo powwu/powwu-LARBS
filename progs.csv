@@ -72,7 +72,7 @@
 ,leafpad,"because sometimes using your cursor is nice"
 ,fail2ban,"too many failed password attempts and you go bye bye night night"
 ,feh,"image viewer, also wallpapers"
-,firefox,"ever heard of chrome?"
+,firefox-developer-edition,"ever heard of chrome?"
 ,gimp,"image editing software, like photoshop but worse (and cheaper)"
 ,imagemagick,"it does things with images"
 ,obs-studio,
@@ -165,3 +165,4 @@
 ,qt5-wayland,
 ,wl-clipboard-git,
 ,lightdm,
+,wal-telegram-git,
