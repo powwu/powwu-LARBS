@@ -18,6 +18,7 @@
 !.config/BetterDiscord/themes/*
 !.config/BetterDiscord/data/stable/*
 !.local/bin/*
+!.kicad/*
 !.screenlayout/*
 !.zshrc
 !rice
